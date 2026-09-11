@@ -1,1 +1,1987 @@
-index
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>
+ملخص مفتشي ومراقبي الضرائب - موريتانيا
+</title>
+
+<style>
+
+:root{
+ --green:#063b2b;
+ --green2:#0a6045;
+ --yellow:#f4c400;
+ --yellow2:#ffe36a;
+ --white:#fff;
+ --gray:#f2f5f3;
+ --dark:#17201d;
+ --red:#c62828;
+ --blue:#1769aa;
+ --shadow:0 4px 18px rgba(0,0,0,.09);
+}
+
+*{
+ box-sizing:border-box;
+}
+
+body{
+ margin:0;
+ background:#edf2ef;
+ color:var(--dark);
+ font-family:
+ Arial,
+ Tahoma,
+ sans-serif;
+ line-height:1.8;
+}
+
+header{
+ background:
+ linear-gradient(
+  135deg,
+  var(--green),
+  #021e15
+ );
+ color:white;
+ padding:25px 15px;
+ position:sticky;
+ top:0;
+ z-index:100;
+ box-shadow:var(--shadow);
+}
+
+.header{
+ max-width:1150px;
+ margin:auto;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:20px;
+}
+
+.logo{
+ color:var(--yellow);
+ font-size:25px;
+ font-weight:bold;
+}
+
+.header small{
+ opacity:.9;
+}
+
+.search{
+ width:300px;
+ padding:12px 15px;
+ border-radius:10px;
+ border:2px solid var(--yellow);
+ outline:none;
+}
+
+.container{
+ max-width:1150px;
+ margin:25px auto;
+ padding:0 15px;
+}
+
+.hero{
+ background:white;
+ border-radius:18px;
+ padding:25px;
+ box-shadow:var(--shadow);
+ border-top:7px solid var(--yellow);
+}
+
+.hero h1{
+ color:var(--green);
+ margin-top:0;
+}
+
+.badges{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin-top:15px;
+}
+
+.badge{
+ background:var(--green);
+ color:white;
+ padding:7px 12px;
+ border-radius:20px;
+ font-size:13px;
+}
+
+.badge.yellow{
+ background:var(--yellow);
+ color:#222;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:
+ repeat(auto-fit,minmax(280px,1fr));
+ gap:15px;
+ margin-top:20px;
+}
+
+.card{
+ background:white;
+ border-radius:15px;
+ padding:18px;
+ box-shadow:var(--shadow);
+ border-right:5px solid var(--green);
+}
+
+.card h2{
+ margin-top:0;
+ color:var(--green);
+ font-size:20px;
+}
+
+.card h3{
+ color:var(--green2);
+}
+
+.section{
+ margin-top:25px;
+}
+
+.section-title{
+ background:var(--green);
+ color:white;
+ padding:14px 18px;
+ border-radius:12px;
+ border-right:8px solid var(--yellow);
+}
+
+.topic{
+ background:white;
+ margin:10px 0;
+ border-radius:12px;
+ box-shadow:var(--shadow);
+ overflow:hidden;
+}
+
+.topic-title{
+ padding:15px 18px;
+ cursor:pointer;
+ font-weight:bold;
+ color:var(--green);
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+
+.topic-title:hover{
+ background:#f8faf9;
+}
+
+.topic-content{
+ display:none;
+ padding:18px;
+ border-top:1px solid #ddd;
+}
+
+.topic.open .topic-content{
+ display:block;
+}
+
+.definition{
+ background:#f1f8f4;
+ border-right:4px solid var(--green);
+ padding:12px;
+ margin:10px 0;
+}
+
+.warning{
+ background:#fff8d6;
+ border-right:5px solid var(--yellow);
+ padding:12px;
+ margin:10px 0;
+}
+
+.danger{
+ background:#fff0f0;
+ border-right:5px solid var(--red);
+ padding:12px;
+ margin:10px 0;
+}
+
+.fr{
+ direction:ltr;
+ text-align:left;
+ font-family:Arial,sans-serif;
+ background:#f7f9f8;
+ padding:10px;
+ border-radius:8px;
+ margin:8px 0;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin:15px 0;
+ background:white;
+}
+
+th{
+ background:var(--green);
+ color:white;
+ padding:10px;
+}
+
+td{
+ border:1px solid #ddd;
+ padding:10px;
+}
+
+tr:nth-child(even){
+ background:#f8faf9;
+}
+
+.formula{
+ background:#102b21;
+ color:#fff;
+ padding:14px;
+ border-radius:10px;
+ direction:ltr;
+ text-align:center;
+ font-size:18px;
+ margin:12px 0;
+}
+
+.btns{
+ display:flex;
+ flex-wrap:wrap;
+ gap:10px;
+ margin:20px 0;
+}
+
+button{
+ border:0;
+ padding:12px 18px;
+ border-radius:10px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+.btn{
+ background:var(--green);
+ color:white;
+}
+
+.btn-yellow{
+ background:var(--yellow);
+ color:#222;
+}
+
+.btn-red{
+ background:var(--red);
+ color:white;
+}
+
+footer{
+ text-align:center;
+ color:#777;
+ padding:35px 15px;
+}
+
+.hidden{
+ display:none!important;
+}
+
+@media(max-width:700px){
+
+ .header{
+  flex-direction:column;
+ }
+
+ .search{
+  width:100%;
+ }
+
+ .logo{
+  font-size:20px;
+ }
+
+}
+
+@media print{
+
+ header,
+ .btns,
+ .search{
+  display:none!important;
+ }
+
+ body{
+  background:white;
+ }
+
+ .topic-content{
+  display:block!important;
+ }
+
+ .topic{
+  box-shadow:none;
+  border:1px solid #ddd;
+ }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+ <div class="header">
+
+  <div>
+   <div class="logo">
+    🇲🇷 ملخص الضرائب — موريتانيا
+   </div>
+
+   <small>
+    Préparation Inspecteur / Contrôleur des Impôts
+   </small>
+  </div>
+
+  <input
+   id="search"
+   class="search"
+   placeholder="🔎 ابحث في الملخص..."
+   oninput="searchTopics()">
+
+ </div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+ <h1>
+ 📚 الملخص الشامل لمفتش ومراقب الضرائب
+ </h1>
+
+ <p>
+ هذا الملخص موجه للتحضير المنهجي لمواضيع الضرائب،
+ المالية العامة، المحاسبة، الرقابة، المنازعات،
+ الأخلاقيات والتعاون الضريبي الدولي في موريتانيا.
+ </p>
+
+ <div class="badges">
+
+  <span class="badge">
+   CGI
+  </span>
+
+  <span class="badge">
+   IS
+  </span>
+
+  <span class="badge">
+   TVA
+  </span>
+
+  <span class="badge">
+   IBAPP
+  </span>
+
+  <span class="badge">
+   ITS
+  </span>
+
+  <span class="badge">
+   IRCM
+  </span>
+
+  <span class="badge">
+   BEPS
+  </span>
+
+  <span class="badge">
+   CRS
+  </span>
+
+  <span class="badge">
+   FATCA
+  </span>
+
+  <span class="badge yellow">
+   تحديث 2026
+  </span>
+
+ </div>
+
+ <div class="btns">
+
+  <button
+   class="btn-yellow"
+   onclick="openAll()">
+   📖 فتح الكل
+  </button>
+
+  <button
+   class="btn"
+   onclick="closeAll()">
+   📕 إغلاق الكل
+  </button>
+
+  <button
+   class="btn"
+   onclick="window.print()">
+   🖨️ طباعة / PDF
+  </button>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 1
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  1 — أساسيات النظام الجبائي الموريتاني
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   مفهوم الضريبة
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    <b>الضريبة:</b>
+    مبلغ مالي تفرضه الدولة أو الجماعات المختصة
+    بموجب القانون لتمويل النفقات العامة وتحقيق أهداف
+    اقتصادية واجتماعية.
+
+   </div>
+
+   <div class="fr">
+    L'impôt est un prélèvement obligatoire établi par la loi
+    afin de financer les charges publiques et poursuivre
+    certains objectifs économiques et sociaux.
+   </div>
+
+   <h3>أهم الخصائص</h3>
+
+   <ul>
+    <li>إلزامية.</li>
+    <li>أساسها القانون.</li>
+    <li>تساهم في تمويل النفقات العامة.</li>
+    <li>يمكن أن تحقق أهدافًا اقتصادية واجتماعية.</li>
+    <li>تختلف عن الرسوم والإتاوات.</li>
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   مبدأ الشرعية الجبائية
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    لا يجوز إنشاء ضريبة أو تعديل عناصرها الأساسية
+    خارج الإطار القانوني المختص.
+
+   </div>
+
+   <p>
+    في أسئلة المسابقة انتبه إلى الكلمات:
+    <b>القانون — الوعاء — المعدل — التحصيل — الإعفاء.</b>
+   </p>
+
+   <div class="warning">
+    ⚠️ الفخ:
+    السلطة الإدارية لا تعني حرية مطلقة في فرض الضريبة.
+    يجب التمييز بين السلطة التقديرية في تطبيق القانون
+    وبين إنشاء قاعدة ضريبية جديدة.
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   مصادر التشريع الجبائي
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ol>
+
+    <li>الدستور.</li>
+    <li>القوانين.</li>
+    <li>المدونة العامة للضرائب CGI.</li>
+    <li>قوانين المالية.</li>
+    <li>المراسيم واللوائح التطبيقية.</li>
+    <li>الاتفاقيات الدولية المصادق عليها وفق القواعد الدستورية.</li>
+
+   </ol>
+
+   <div class="warning">
+    في الامتحان لا تخلط بين النص الذي ينشئ الضريبة
+    والنص الذي يحدد كيفية تطبيقها.
+   </div>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 2 CGI
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  2 — المدونة العامة للضرائب CGI
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   CGI — Code Général des Impôts
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    القانون رقم <b>2019-018</b>
+    المؤرخ في 29 أبريل 2019
+    المتضمن المدونة العامة للضرائب.
+
+   </div>
+
+   <div class="fr">
+    Loi n° 2019-018 du 29 avril 2019
+    portant Code Général des Impôts.
+   </div>
+
+   <p>
+    من أهم أبوابه:
+   </p>
+
+   <ul>
+
+    <li>Impôt sur les sociétés — IS</li>
+
+    <li>IBAPP</li>
+
+    <li>Revenus fonciers</li>
+
+    <li>Traitements et salaires</li>
+
+    <li>IRCM</li>
+
+    <li>TVA</li>
+
+    <li>Droits d'enregistrement</li>
+
+    <li>Droits de timbre</li>
+
+    <li>Procédures fiscales</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   IS — Impôt sur les sociétés
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    ضريبة على الشركات والأشخاص المعنويين
+    الخاضعين لها وفق القانون.
+
+   </div>
+
+   <h3>طريقة التفكير في السؤال</h3>
+
+   <ol>
+
+    <li>من هو المكلف؟</li>
+
+    <li>ما هو النشاط أو الدخل؟</li>
+
+    <li>ما هو الوعاء؟</li>
+
+    <li>ما هو النظام الضريبي المطبق؟</li>
+
+    <li>ما هي الالتزامات التصريحية؟</li>
+
+    <li>ما هو أجل الدفع؟</li>
+
+   </ol>
+
+   <div class="warning">
+
+    ⚠️ لا تحفظ نسبة ضريبية من ملخص قديم دون
+    التحقق من قانون المالية أو التعديل الأخير.
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   IBAPP
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    <b>
+     Impôt sur les bénéfices d'affaires des personnes physiques
+    </b>
+
+    ضريبة أرباح الأعمال للأشخاص الطبيعيين
+    وفق شروط ونظم المدونة.
+
+   </div>
+
+   <p>
+    في السؤال التطبيقي ركز على:
+   </p>
+
+   <ul>
+
+    <li>طبيعة النشاط.</li>
+
+    <li>رقم الأعمال أو عناصر الوعاء حسب النظام.</li>
+
+    <li>النظام الجبائي.</li>
+
+    <li>التصريح.</li>
+
+    <li>الدفع.</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   المرتبات والأجور ITS
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    يفرض الضريبة على الدخول الناتجة عن
+    traitements, salaires et indemnités
+    وفق الشروط المحددة في CGI.
+
+   </div>
+
+   <div class="fr">
+
+    Impôt sur les traitements et salaires
+
+   </div>
+
+   <p>
+    يجب التمييز بين:
+   </p>
+
+   <ul>
+
+    <li>الدخل الخاضع.</li>
+
+    <li>العناصر المستثناة أو المعفاة.</li>
+
+    <li>الوعاء.</li>
+
+    <li>الاقتطاع من المنبع.</li>
+
+    <li>التصريح والتحويل للإدارة.</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   IRCM
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    <b>
+     Impôt sur le Revenu des Capitaux Mobiliers
+    </b>
+
+    ضريبة على دخل رؤوس الأموال المنقولة،
+    حسب الحالات والأنظمة المحددة في المدونة.
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   TVA — الضريبة على القيمة المضافة
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    TVA = Taxe sur la Valeur Ajoutée.
+
+    وهي ضريبة غير مباشرة ترتبط بالعمليات
+    والسلع والخدمات الخاضعة وفق القانون.
+
+   </div>
+
+   <h3>في السؤال التطبيقي</h3>
+
+   <ol>
+
+    <li>هل العملية خاضعة؟</li>
+
+    <li>هل يوجد إعفاء؟</li>
+
+    <li>ما هو الوعاء؟</li>
+
+    <li>ما هو المعدل القانوني؟</li>
+
+    <li>متى تصبح الضريبة مستحقة؟</li>
+
+    <li>هل يمكن خصم TVA المدخلات؟</li>
+
+    <li>هل التصريح والدفع تمّا في الأجل؟</li>
+
+   </ol>
+
+   <div class="formula">
+
+    TVA à payer =
+    TVA collectée − TVA déductible
+
+   </div>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 3 CONTROLE
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  3 — التفتيش والرقابة الجبائية
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   دور مفتش الضرائب
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ul>
+
+    <li>فحص الالتزام الجبائي.</li>
+
+    <li>تحليل التصريحات.</li>
+
+    <li>مقارنة التصريحات بالمحاسبة.</li>
+
+    <li>فحص الوثائق المؤيدة.</li>
+
+    <li>تحديد المخاطر الجبائية.</li>
+
+    <li>اقتراح التصحيح وفق الإجراءات القانونية.</li>
+
+    <li>احترام حقوق المكلف.</li>
+
+   </ul>
+
+   <div class="warning">
+
+    المفتش ليس خصمًا للمكلف؛
+    دوره تطبيق القانون والتحقق من صحة الوضعية الجبائية.
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   منهجية الرقابة
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ol>
+
+    <li>جمع المعلومات.</li>
+
+    <li>تحليل المخاطر.</li>
+
+    <li>اختيار الملفات.</li>
+
+    <li>فحص المحاسبة.</li>
+
+    <li>مطابقة الوثائق.</li>
+
+    <li>مقارنة التصريحات.</li>
+
+    <li>تحديد الفروقات.</li>
+
+    <li>احترام المسطرة.</li>
+
+    <li>إبلاغ المكلف حسب القانون.</li>
+
+    <li>حساب التصحيح والجزاءات عند الاقتضاء.</li>
+
+   </ol>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   المحاسبة والتدقيق
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <p>
+    المفتش يركز على العلاقة بين:
+   </p>
+
+   <div class="formula">
+
+    Chiffre d'affaires
+    →
+    Comptabilité
+    →
+    Déclarations
+    →
+    Pièces justificatives
+    →
+    Paiements bancaires
+
+   </div>
+
+   <h3>مؤشرات الخطر</h3>
+
+   <ul>
+
+    <li>فرق بين البنك والصندوق.</li>
+
+    <li>مبيعات غير مسجلة.</li>
+
+    <li>مصروفات بلا وثائق.</li>
+
+    <li>فواتير غير صحيحة.</li>
+
+    <li>تضخم المصاريف.</li>
+
+    <li>اختلاف بين التصريح والمحاسبة.</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   حقوق المكلف
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ul>
+
+    <li>المعاملة وفق القانون.</li>
+
+    <li>احترام الإجراءات.</li>
+
+    <li>حق الدفاع وفق المسطرة.</li>
+
+    <li>حق معرفة أساس التصحيح وفق القواعد المطبقة.</li>
+
+    <li>احترام السرية المهنية.</li>
+
+   </ul>
+
+   <div class="danger">
+
+    ⚠️ المخالفة المهنية:
+    استغلال المعلومات لمصلحة شخصية،
+    التمييز، طلب منفعة، أو تجاوز الصلاحيات.
+   </div>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 4 FRAUDE
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  4 — التهرب والمنازعات والعقوبات
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   التهرب الضريبي
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    التهرب هو استعمال وسائل مخالفة للقانون
+    بقصد تخفيض أو تفادي الضريبة المستحقة.
+
+   </div>
+
+   <h3>أمثلة عامة</h3>
+
+   <ul>
+
+    <li>إخفاء جزء من رقم الأعمال.</li>
+
+    <li>إخفاء مداخيل.</li>
+
+    <li>فواتير وهمية.</li>
+
+    <li>محاسبة غير حقيقية.</li>
+
+    <li>تصريحات تتضمن معلومات كاذبة.</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   التخطيط والهندسة الضريبية
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    التخطيط الضريبي المشروع يستعمل الخيارات
+    التي يسمح بها القانون.
+
+   </div>
+
+   <div class="warning">
+
+    ⚠️ الفخ في QCM:
+    ليس كل تخفيض للضريبة تهربًا،
+    لكن استعمال وسائل مخالفة للقانون قد يتحول
+    إلى تهرب أو احتيال حسب الوقائع والنصوص.
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   المنازعات الضريبية
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ol>
+
+    <li>وجود قرار أو مطالبة ضريبية.</li>
+
+    <li>اعتراض أو طعن وفق الإجراءات.</li>
+
+    <li>فحص الحجج والوثائق.</li>
+
+    <li>احترام الآجال.</li>
+
+    <li>اللجوء إلى الجهة المختصة عند الاقتضاء.</li>
+
+   </ol>
+
+   <div class="warning">
+
+    في الامتحان:
+    <b>الآجال والإجراءات والاختصاص</b>
+    أهم من الحفظ العشوائي.
+   </div>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 5 FINANCES PUBLIQUES
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  5 — المالية العامة والميزانية
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   قانون المالية
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    الإطار القانوني الأساسي لقوانين المالية
+    يشمل القانون النظامي رقم 2018-039،
+    مع تعديلات لاحقة.
+
+   </div>
+
+   <p>
+    من أنواع قوانين المالية:
+   </p>
+
+   <ul>
+
+    <li>Loi de finances de l'année</li>
+
+    <li>Loi de finances rectificative</li>
+
+    <li>Loi de règlement</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   مبادئ الميزانية
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ul>
+
+    <li>السنوية.</li>
+
+    <li>الوحدة.</li>
+
+    <li>الشمول.</li>
+
+    <li>التخصيص حسب القواعد.</li>
+
+    <li>الشفافية.</li>
+
+    <li>الرقابة.</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   تحديث 2026
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="warning">
+
+    🔔 انتبه:
+    في سنة 2026 صدر القانون النظامي
+    <b>2026-019</b>
+    المعدل لبعض أحكام القانون النظامي
+    <b>2018-039</b> المتعلق بقوانين المالية.
+
+   </div>
+
+   <p>
+    لذلك لا تعتمد في أسئلة المالية العامة
+    على نسخة قديمة فقط.
+   </p>
+
+   <p>
+    راجع آخر قانون مالية والنصوص المعدلة
+    قبل الامتحان.
+   </p>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 6 INTERNATIONAL
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  6 — الضرائب الدولية والاقتصاد الرقمي
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   الازدواج الضريبي الدولي
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    يحدث الازدواج عندما يخضع نفس الدخل
+    أو الوعاء لضرائب مماثلة في دولتين أو أكثر
+    في ظروف معينة.
+
+   </div>
+
+   <p>
+    الاتفاقيات الجبائية تهدف إلى تنظيم الاختصاص
+    الضريبي ومنع أو تخفيف الازدواج ومكافحة التهرب.
+   </p>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   BEPS
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="definition">
+
+    BEPS =
+    Base Erosion and Profit Shifting
+
+   </div>
+
+   <p>
+    يركز على مكافحة تآكل الوعاء الضريبي
+    وتحويل الأرباح بطريقة تؤدي إلى تجنب ضريبي
+    أو انخفاض غير مناسب في الضريبة.
+   </p>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   CRS و FATCA
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <table>
+
+    <tr>
+     <th>الاختصار</th>
+     <th>المعنى</th>
+     <th>الفكرة</th>
+    </tr>
+
+    <tr>
+     <td>CRS</td>
+     <td>Common Reporting Standard</td>
+     <td>معيار تبادل المعلومات المالية</td>
+    </tr>
+
+    <tr>
+     <td>FATCA</td>
+     <td>Foreign Account Tax Compliance Act</td>
+     <td>نظام أمريكي لمعلومات الحسابات المالية</td>
+    </tr>
+
+    <tr>
+     <td>BEPS</td>
+     <td>Base Erosion and Profit Shifting</td>
+     <td>مكافحة تآكل الوعاء وتحويل الأرباح</td>
+    </tr>
+
+   </table>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   الاقتصاد الرقمي
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ul>
+
+    <li>منصات رقمية.</li>
+
+    <li>خدمات عابرة للحدود.</li>
+
+    <li>تحديد مكان النشاط.</li>
+
+    <li>تحديد الوعاء الضريبي.</li>
+
+    <li>تبادل المعلومات.</li>
+
+    <li>التجارة الإلكترونية.</li>
+
+   </ul>
+
+   <div class="warning">
+
+    الفكرة الأساسية:
+    الاقتصاد الرقمي يصعّب أحيانًا تحديد مكان القيمة
+    والنشاط والمكلف، ولذلك يحتاج إلى تعاون دولي
+    وقواعد حديثة.
+   </div>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 7 ETHIQUE
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  7 — أخلاقيات المفتش والوظيفة العمومية
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   أخلاقيات المهنة
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <table>
+
+    <tr>
+     <th>المبدأ</th>
+     <th>التطبيق</th>
+    </tr>
+
+    <tr>
+     <td>النزاهة</td>
+     <td>عدم طلب أو قبول منفعة غير مشروعة</td>
+    </tr>
+
+    <tr>
+     <td>الحياد</td>
+     <td>معاملة المكلفين وفق القانون</td>
+    </tr>
+
+    <tr>
+     <td>السرية</td>
+     <td>عدم كشف المعلومات المهنية بلا أساس قانوني</td>
+    </tr>
+
+    <tr>
+     <td>المهنية</td>
+     <td>الاعتماد على الوثائق والقانون</td>
+    </tr>
+
+    <tr>
+     <td>المساءلة</td>
+     <td>تحمل مسؤولية القرارات والأعمال</td>
+    </tr>
+
+   </table>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   مكافحة الفساد
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ul>
+
+    <li>تجنب تضارب المصالح.</li>
+
+    <li>رفض الرشوة.</li>
+
+    <li>عدم استغلال المعلومات.</li>
+
+    <li>توثيق الإجراءات.</li>
+
+    <li>احترام التسلسل الإداري.</li>
+
+    <li>تطبيق القانون على الجميع.</li>
+
+   </ul>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 8 CALCUL
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  8 — أهم العلاقات والحسابات
+ </h2>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   الحساب الجبائي الأساسي
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <div class="formula">
+
+    Impôt =
+    Base imposable × Taux
+
+   </div>
+
+   <div class="formula">
+
+    TVA due =
+    TVA collectée − TVA déductible
+
+   </div>
+
+   <div class="formula">
+
+    Résultat fiscal =
+    Résultat comptable
+    ± Réintégrations
+    − Déductions
+
+   </div>
+
+   <div class="formula">
+
+    Taux effectif =
+    Impôt payé ÷ Revenu imposable × 100
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="topic">
+
+  <div class="topic-title">
+   كيف تحل سؤال حسابي؟
+   <span>＋</span>
+  </div>
+
+  <div class="topic-content">
+
+   <ol>
+
+    <li>حدد نوع الضريبة.</li>
+
+    <li>حدد المكلف.</li>
+
+    <li>حدد الوعاء.</li>
+
+    <li>حدد العناصر القابلة للخصم.</li>
+
+    <li>حدد المعدل من النص الساري.</li>
+
+    <li>احسب.</li>
+
+    <li>تحقق من التقريب والوحدة.</li>
+
+    <li>تحقق من الإعفاء أو الحد الأدنى إن وجد.</li>
+
+   </ol>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTIE 9 VOCABULAIRE
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  9 — قاموس الاختصارات الضرورية
+ </h2>
+
+ <div class="card">
+
+  <table>
+
+   <tr>
+    <th>اختصار</th>
+    <th>Français</th>
+    <th>العربية</th>
+   </tr>
+
+   <tr>
+    <td>CGI</td>
+    <td>Code Général des Impôts</td>
+    <td>المدونة العامة للضرائب</td>
+   </tr>
+
+   <tr>
+    <td>IS</td>
+    <td>Impôt sur les Sociétés</td>
+    <td>الضريبة على الشركات</td>
+   </tr>
+
+   <tr>
+    <td>IBAPP</td>
+    <td>Impôt sur les Bénéfices d'Affaires des Personnes Physiques</td>
+    <td>ضريبة أرباح الأعمال للأشخاص الطبيعيين</td>
+   </tr>
+
+   <tr>
+    <td>TVA</td>
+    <td>Taxe sur la Valeur Ajoutée</td>
+    <td>الضريبة على القيمة المضافة</td>
+   </tr>
+
+   <tr>
+    <td>IRCM</td>
+    <td>Impôt sur le Revenu des Capitaux Mobiliers</td>
+    <td>ضريبة دخل رؤوس الأموال المنقولة</td>
+   </tr>
+
+   <tr>
+    <td>CRS</td>
+    <td>Common Reporting Standard</td>
+    <td>المعيار المشترك للإبلاغ</td>
+   </tr>
+
+   <tr>
+    <td>FATCA</td>
+    <td>Foreign Account Tax Compliance Act</td>
+    <td>قانون الامتثال الضريبي للحسابات الأجنبية</td>
+   </tr>
+
+   <tr>
+    <td>BEPS</td>
+    <td>Base Erosion and Profit Shifting</td>
+    <td>تآكل الوعاء وتحويل الأرباح</td>
+   </tr>
+
+   <tr>
+    <td>ISF</td>
+    <td>Impôt / système fiscal</td>
+    <td>يجب تحديد المقصود من السياق</td>
+   </tr>
+
+  </table>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     PIEGES QCM
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  10 — فخاخ QCM التي يجب الانتباه إليها
+ </h2>
+
+
+ <div class="grid">
+
+  <div class="card">
+
+   <h2>🎯 فخ المصطلحات</h2>
+
+   <p>
+    لا تخلط بين:
+   </p>
+
+   <ul>
+    <li>الوعاء</li>
+    <li>المعدل</li>
+    <li>الضريبة</li>
+    <li>التحصيل</li>
+    <li>التصريح</li>
+   </ul>
+
+  </div>
+
+
+  <div class="card">
+
+   <h2>⚠️ فخ النسب</h2>
+
+   <p>
+    إذا وجدت نسبة في سؤال،
+    تحقق أولًا من:
+   </p>
+
+   <ul>
+    <li>نوع الضريبة.</li>
+    <li>نوع المكلف.</li>
+    <li>النظام.</li>
+    <li>الفترة القانونية.</li>
+   </ul>
+
+  </div>
+
+
+  <div class="card">
+
+   <h2>⚠️ فخ كلمة «دائمًا»</h2>
+
+   <p>
+    كلمات مثل:
+    <b>دائمًا، أبدًا، جميع، فقط</b>
+    تجعل العبارة بحاجة إلى تدقيق شديد.
+   </p>
+
+  </div>
+
+
+  <div class="card">
+
+   <h2>🧠 فخ «صحيح جزئيًا»</h2>
+
+   <p>
+    بعض الاختيارات تحتوي معلومة صحيحة
+    ولكنها لا تجيب عن السؤال.
+   </p>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- =====================================================
+     STRATEGIE
+===================================================== -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  11 — استراتيجية الإجابة في المسابقة
+ </h2>
+
+
+ <div class="card">
+
+  <h3>المرحلة 1 — اقرأ السؤال</h3>
+
+  <p>
+   حدد أولًا: ماذا يريد السؤال؟
+   تعريف؟ نسبة؟ إجراء؟ اختصاص؟ حساب؟
+  </p>
+
+  <h3>المرحلة 2 — حدد الكلمة المفتاحية</h3>
+
+  <p>
+   مثال:
+   <b>«الوعاء»</b> ليس هو
+   <b>«المعدل»</b>.
+  </p>
+
+  <h3>المرحلة 3 — استبعد الواضح الخطأ</h3>
+
+  <p>
+   في QCM يمكنك أحيانًا استبعاد
+   2 أو 3 اختيارات قبل المقارنة النهائية.
+  </p>
+
+  <h3>المرحلة 4 — لا تستعمل الحفظ وحده</h3>
+
+  <p>
+   في السؤال التطبيقي:
+   افهم الحالة ثم طبق النص.
+  </p>
+
+  <div class="warning">
+
+   ⭐ قاعدة ذهبية:
+   <br>
+   <b>
+   مكلف → نشاط → وعاء → إعفاء/خصم → معدل → تصريح → دفع → رقابة
+   </b>
+
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- SOURCES -->
+
+<div class="section">
+
+ <h2 class="section-title">
+  12 — مراجع المراجعة الرسمية
+ </h2>
+
+ <div class="card">
+
+  <ul>
+
+   <li>
+    المدونة العامة للضرائب — قانون 2019-018.
+   </li>
+
+   <li>
+    القانون النظامي 2018-039 المتعلق بقوانين المالية.
+   </li>
+
+   <li>
+    القانون النظامي 2026-019 المعدل لبعض أحكام قانون المالية.
+   </li>
+
+   <li>
+    قوانين المالية السنوية والتكميلية.
+   </li>
+
+   <li>
+    النصوص التنظيمية والتطبيقية المنشورة من وزارة المالية.
+   </li>
+
+  </ul>
+
+  <div class="danger">
+
+   ⚠️ هذا الملخص أداة للمراجعة وليس بديلًا عن
+   النص القانوني الرسمي.
+   عند وجود تعارض، يُرجع إلى النص القانوني
+   الساري وآخر تعديل منشور.
+
+  </div>
+
+ </div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🇲🇷
+ملخص تحضير مفتشي ومراقبي الضرائب — موريتانيا
+
+<br>
+
+CGI • Finance Publique • Contrôle Fiscal •
+Contentieux • Fiscalité Internationale
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   ACCORDION
+===================================================== */
+
+document.querySelectorAll(".topic-title")
+.forEach(title=>{
+
+ title.addEventListener("click",()=>{
+
+   const topic=
+     title.parentElement;
+
+   topic.classList.toggle("open");
+
+   const icon=
+     title.querySelector("span");
+
+   if(topic.classList.contains("open"))
+      icon.textContent="−";
+   else
+      icon.textContent="＋";
+
+ });
+
+});
+
+
+/* =====================================================
+   OPEN ALL
+===================================================== */
+
+function openAll(){
+
+ document.querySelectorAll(".topic")
+ .forEach(topic=>{
+
+   topic.classList.add("open");
+
+   const icon=
+    topic.querySelector(".topic-title span");
+
+   if(icon)
+      icon.textContent="−";
+
+ });
+
+}
+
+
+/* =====================================================
+   CLOSE ALL
+===================================================== */
+
+function closeAll(){
+
+ document.querySelectorAll(".topic")
+ .forEach(topic=>{
+
+   topic.classList.remove("open");
+
+   const icon=
+    topic.querySelector(".topic-title span");
+
+   if(icon)
+      icon.textContent="＋";
+
+ });
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchTopics(){
+
+ const text=
+   document
+    .getElementById("search")
+    .value
+    .toLowerCase()
+    .trim();
+
+ document
+  .querySelectorAll(".topic")
+  .forEach(topic=>{
+
+    const content=
+      topic.innerText
+      .toLowerCase();
+
+    if(
+      text==="" ||
+      content.includes(text)
+    ){
+
+      topic.classList.remove("hidden");
+
+    }else{
+
+      topic.classList.add("hidden");
+
+    }
+
+  });
+
+}
+
+
+/* =====================================================
+   KEYBOARD SHORTCUT
+===================================================== */
+
+document.addEventListener("keydown",e=>{
+
+ if(e.ctrlKey && e.key==="f"){
+
+   e.preventDefault();
+
+   document
+    .getElementById("search")
+    .focus();
+
+ }
+
+});
+
+</script>
+
+</body>
+</html>
