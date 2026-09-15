@@ -1,1987 +1,938 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة المراجعة القانونية - أعداد: يحيى طالب عبد الله</title>
+    <style>
+        :root {
+            --red-dark: #b71c1c;
+            --red-old: #7f1d1d;
+            --orange: #d4a017;
+            --yellow-dark: #d4af37;
+            --green-dark: #0b3d2e;
+            --green: #2e7d32;
+            --white: #ffffff;
+            --text-dark: #212121;
+            --text-light: #555555;
+            --border-radius: 12px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<title>
-ملخص مفتشي ومراقبي الضرائب - موريتانيا
-</title>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
+        body {
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, #f7fbf8 0%, #eaf4ed 35%, #dcefe2 70%, #c8dfcf 100%);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
 
-:root{
- --green:#063b2b;
- --green2:#0a6045;
- --yellow:#f4c400;
- --yellow2:#ffe36a;
- --white:#fff;
- --gray:#f2f5f3;
- --dark:#17201d;
- --red:#c62828;
- --blue:#1769aa;
- --shadow:0 4px 18px rgba(0,0,0,.09);
-}
+        .app-container {
+            max-width: 1100px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            box-shadow: 0 15px 50px rgba(11, 61, 46, 0.22);
+            overflow: hidden;
+            border: 4px solid var(--green-dark);
+        }
 
-*{
- box-sizing:border-box;
-}
+        /* ==================== الهيدر ==================== */
+        header {
+            background: linear-gradient(135deg, var(--green-dark), var(--green));
+            color: var(--white);
+            padding: 28px 30px;
+            text-align: center;
+            border-bottom: 5px solid var(--yellow-dark);
+            position: relative;
+        }
 
-body{
- margin:0;
- background:#edf2ef;
- color:var(--dark);
- font-family:
- Arial,
- Tahoma,
- sans-serif;
- line-height:1.8;
-}
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+        }
 
-header{
- background:
- linear-gradient(
-  135deg,
-  var(--green),
-  #021e15
- );
- color:white;
- padding:25px 15px;
- position:sticky;
- top:0;
- z-index:100;
- box-shadow:var(--shadow);
-}
+        header .author {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            font-weight: 700;
+            color: #f5d76e;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
 
-.header{
- max-width:1150px;
- margin:auto;
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:20px;
-}
+        header .contact-info {
+            font-size: 1.15rem;
+            background: rgba(0,0,0,0.16);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 50px;
+            margin-top: 12px;
+            direction: ltr;
+            border: 2px solid var(--yellow-dark);
+        }
 
-.logo{
- color:var(--yellow);
- font-size:25px;
- font-weight:bold;
-}
+        header .contact-info span {
+            direction: rtl;
+            unicode-bidi: embed;
+        }
 
-.header small{
- opacity:.9;
-}
+        header .wish {
+            font-size: 1.05rem;
+            margin-top: 8px;
+            font-style: italic;
+            color: #a5d6a7;
+        }
 
-.search{
- width:300px;
- padding:12px 15px;
- border-radius:10px;
- border:2px solid var(--yellow);
- outline:none;
-}
+        /* ==================== التنقل ==================== */
+        .nav-tabs {
+            display: flex;
+            background: linear-gradient(180deg, #ffffff, #f1f7f3);
+            border-bottom: 3px solid var(--green-dark);
+            flex-wrap: wrap;
+        }
 
-.container{
- max-width:1150px;
- margin:25px auto;
- padding:0 15px;
-}
+        .nav-tabs button {
+            flex: 1;
+            padding: 16px 8px;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--green-dark);
+            border-bottom: 5px solid transparent;
+            font-family: var(--font-family);
+            min-width: 140px;
+        }
 
-.hero{
- background:white;
- border-radius:18px;
- padding:25px;
- box-shadow:var(--shadow);
- border-top:7px solid var(--yellow);
-}
+        .nav-tabs button:hover {
+            background: rgba(46, 125, 50, 0.08);
+            color: var(--green-dark);
+        }
 
-.hero h1{
- color:var(--green);
- margin-top:0;
-}
+        .nav-tabs button.active {
+            background: var(--white);
+            color: var(--green-dark);
+            border-bottom: 5px solid var(--green-dark);
+            box-shadow: inset 0 -3px 0 var(--yellow-dark);
+        }
 
-.badges{
- display:flex;
- flex-wrap:wrap;
- gap:8px;
- margin-top:15px;
-}
+        /* ==================== المحتوى ==================== */
+        .content-area { padding: 30px; min-height: 500px; }
 
-.badge{
- background:var(--green);
- color:white;
- padding:7px 12px;
- border-radius:20px;
- font-size:13px;
-}
+        .section { display: none; animation: fadeIn 0.5s ease; }
+        .section.active { display: block; }
 
-.badge.yellow{
- background:var(--yellow);
- color:#222;
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.grid{
- display:grid;
- grid-template-columns:
- repeat(auto-fit,minmax(280px,1fr));
- gap:15px;
- margin-top:20px;
-}
+        /* ==================== الملخصات ==================== */
+        .summary-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 22px;
+            margin-bottom: 22px;
+            box-shadow: 0 5px 20px rgba(11, 61, 46, 0.10);
+            border-right: 6px solid var(--green);
+            border-left: 3px solid var(--yellow-dark);
+            border-top: 2px solid var(--yellow-dark);
+            text-align: right;
+            transition: transform 0.2s;
+        }
 
-.card{
- background:white;
- border-radius:15px;
- padding:18px;
- box-shadow:var(--shadow);
- border-right:5px solid var(--green);
-}
+        .summary-card:hover { transform: translateX(-5px); }
 
-.card h2{
- margin-top:0;
- color:var(--green);
- font-size:20px;
-}
+        .summary-card h3 {
+            color: var(--green-dark);
+            margin-bottom: 12px;
+            font-size: 1.35rem;
+            border-bottom: 3px solid var(--yellow-dark);
+            padding-bottom: 10px;
+        }
 
-.card h3{
- color:var(--green2);
-}
+        .summary-card p { color: var(--text-dark); font-size: 1rem; margin-bottom: 8px; }
+        .summary-card ul { padding-right: 20px; margin-top: 5px; }
+        .summary-card ul li { margin-bottom: 6px; }
+        .summary-card ul li::marker { color: #b08a00; }
 
-.section{
- margin-top:25px;
-}
+        /* ==================== الاختبارات ==================== */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--green);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-.section-title{
- background:var(--green);
- color:white;
- padding:14px 18px;
- border-radius:12px;
- border-right:8px solid var(--yellow);
-}
+        .quiz-header h2 { color: var(--green-dark); font-size: 1.5rem; }
 
-.topic{
- background:white;
- margin:10px 0;
- border-radius:12px;
- box-shadow:var(--shadow);
- overflow:hidden;
-}
+        .score-display {
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--green-dark), var(--green));
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 3px solid var(--yellow-dark);
+            box-shadow: 0 4px 12px rgba(11,61,46,0.25);
+        }
 
-.topic-title{
- padding:15px 18px;
- cursor:pointer;
- font-weight:bold;
- color:var(--green);
- display:flex;
- justify-content:space-between;
- align-items:center;
-}
+        .question-block {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            transition: border-color 0.3s ease, box-shadow 0.3s;
+            border-right: 5px solid var(--green);
+        }
 
-.topic-title:hover{
- background:#f8faf9;
-}
+        .question-block:hover { box-shadow: 0 5px 25px rgba(11,61,46,0.14); }
 
-.topic-content{
- display:none;
- padding:18px;
- border-top:1px solid #ddd;
-}
+        .question-block.correct {
+            border: 2px solid var(--green);
+            background: #e8f5e9;
+            border-right: 8px solid var(--green-dark);
+        }
 
-.topic.open .topic-content{
- display:block;
-}
+        .question-block.incorrect {
+            border: 2px solid var(--red-dark);
+            background: #ffebee;
+            border-right: 8px solid var(--red-dark);
+        }
 
-.definition{
- background:#f1f8f4;
- border-right:4px solid var(--green);
- padding:12px;
- margin:10px 0;
-}
+        .question-block h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
 
-.warning{
- background:#fff8d6;
- border-right:5px solid var(--yellow);
- padding:12px;
- margin:10px 0;
-}
+        .question-number {
+            background: linear-gradient(135deg, var(--red-dark), var(--orange));
+            color: var(--white);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            border: 2px solid var(--yellow-dark);
+        }
 
-.danger{
- background:#fff0f0;
- border-right:5px solid var(--red);
- padding:12px;
- margin:10px 0;
-}
+        .options-container { display: flex; flex-direction: column; gap: 10px; }
 
-.fr{
- direction:ltr;
- text-align:left;
- font-family:Arial,sans-serif;
- background:#f7f9f8;
- padding:10px;
- border-radius:8px;
- margin:8px 0;
-}
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 13px 16px;
+            background: #fbfdfb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease, border 0.2s ease, transform 0.1s;
+            border: 2px solid transparent;
+            font-size: 1rem;
+        }
 
-table{
- width:100%;
- border-collapse:collapse;
- margin:15px 0;
- background:white;
-}
+        .option-label:hover {
+            background: #fffbea;
+            border-color: #f5d76e;
+            transform: scale(1.01);
+        }
 
-th{
- background:var(--green);
- color:white;
- padding:10px;
-}
+        .option-label input[type="checkbox"], 
+        .option-label input[type="radio"] {
+            margin-left: 12px;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--green-dark);
+            cursor: pointer;
+        }
 
-td{
- border:1px solid #ddd;
- padding:10px;
-}
+        .option-label.selected { background: #fffbea; border-color: #b08a00; }
+        .option-label.correct-answer { background: #e2f2e6; border-color: var(--green-dark); font-weight: 600; }
+        .option-label.wrong-answer { background: #fde8e8; border-color: var(--green-dark); text-decoration: line-through; }
 
-tr:nth-child(even){
- background:#f8faf9;
-}
+        .submit-btn {
+            background: linear-gradient(135deg, var(--green-dark), var(--green));
+            color: var(--white);
+            border: 3px solid var(--yellow-dark);
+            padding: 16px 45px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            margin: 30px auto 10px;
+            box-shadow: 0 6px 20px rgba(11, 61, 46, 0.25);
+            font-family: var(--font-family);
+        }
 
-.formula{
- background:#102b21;
- color:#fff;
- padding:14px;
- border-radius:10px;
- direction:ltr;
- text-align:center;
- font-size:18px;
- margin:12px 0;
-}
+        .submit-btn:hover { transform: scale(1.04); box-shadow: 0 8px 30px rgba(11, 61, 46, 0.35); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-.btns{
- display:flex;
- flex-wrap:wrap;
- gap:10px;
- margin:20px 0;
-}
+        .result-box {
+            text-align: center;
+            padding: 35px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 40px rgba(11,61,46,0.18);
+            margin-top: 20px;
+            border: 4px solid var(--green-dark);
+            display: none;
+        }
 
-button{
- border:0;
- padding:12px 18px;
- border-radius:10px;
- font-weight:bold;
- cursor:pointer;
-}
+        .result-box.show { display: block; animation: fadeIn 0.5s ease; }
+        .result-box h2 { font-size: 2rem; color: var(--green-dark); }
+        .result-box .final-score {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: var(--green-dark);
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .result-box .score-detail { font-size: 1.1rem; color: var(--text-light); }
 
-.btn{
- background:var(--green);
- color:white;
-}
+        /* ==================== الصفحة الاحترافية ==================== */
+        .pro-page {
+            text-align: center;
+            padding: 45px 25px;
+            border: 6px solid var(--red-dark);
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #ffffff, #f7fbf8, #edf6f0);
+            box-shadow: inset 0 0 40px rgba(11,61,46,0.06), 0 10px 40px rgba(11,61,46,0.18);
+            position: relative;
+        }
 
-.btn-yellow{
- background:var(--yellow);
- color:#222;
-}
+        .pro-page::before {
+            content: "⚖️";
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            background: var(--white);
+            padding: 0 20px;
+            border-radius: 50%;
+        }
 
-.btn-red{
- background:var(--red);
- color:white;
-}
+        .pro-page h2 {
+            font-size: 3rem;
+            color: var(--green-dark);
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 0 var(--yellow-dark);
+            margin-top: 20px;
+        }
 
-footer{
- text-align:center;
- color:#777;
- padding:35px 15px;
-}
+        .pro-page .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(11,61,46,0.18);
+            max-width: 700px;
+            margin: 0 auto;
+            border: 3px solid var(--green);
+            border-top: 8px solid var(--yellow-dark);
+            position: relative;
+        }
 
-.hidden{
- display:none!important;
-}
+        .pro-page .card p { font-size: 1.2rem; margin-bottom: 15px; color: var(--text-dark); }
 
-@media(max-width:700px){
+        .pro-page .card .big-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--green-dark);
+            text-shadow: 4px 4px 0 var(--yellow-dark);
+            line-height: 1.2;
+        }
 
- .header{
-  flex-direction:column;
- }
+        .pro-page .card hr { border: 3px dashed var(--orange); margin: 25px 0; }
 
- .search{
-  width:100%;
- }
+        .pro-page .card .contact-line {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--green-dark);
+            direction: ltr;
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 50px;
+            border: 2px solid var(--green);
+        }
 
- .logo{
-  font-size:20px;
- }
+        .pro-page .card .contact-line span {
+            direction: rtl;
+            unicode-bidi: embed;
+        }
 
-}
+        .pro-page .card .author-line {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--green-dark);
+            margin-top: 10px;
+        }
 
-@media print{
+        .pro-page .card .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--red-dark), var(--orange));
+            color: var(--white);
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-top: 15px;
+            border: 2px solid var(--yellow-dark);
+        }
 
- header,
- .btns,
- .search{
-  display:none!important;
- }
-
- body{
-  background:white;
- }
-
- .topic-content{
-  display:block!important;
- }
-
- .topic{
-  box-shadow:none;
-  border:1px solid #ddd;
- }
-
-}
-
-</style>
+        /* ==================== تجاوب ==================== */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.3rem; }
+            .nav-tabs button { font-size: 0.8rem; padding: 12px 5px; min-width: 110px; }
+            .content-area { padding: 15px; }
+            .question-block h3 { font-size: 1rem; flex-direction: column; align-items: flex-start; }
+            .option-label { font-size: 0.9rem; }
+            .result-box .final-score { font-size: 2.5rem; }
+            .pro-page h2 { font-size: 2rem; }
+            .pro-page .card .big-number { font-size: 3.5rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-
- <div class="header">
-
-  <div>
-   <div class="logo">
-    🇲🇷 ملخص الضرائب — موريتانيا
-   </div>
-
-   <small>
-    Préparation Inspecteur / Contrôleur des Impôts
-   </small>
-  </div>
-
-  <input
-   id="search"
-   class="search"
-   placeholder="🔎 ابحث في الملخص..."
-   oninput="searchTopics()">
-
- </div>
-
-</header>
-
-
-<div class="container">
-
-
-<!-- HERO -->
-
-<div class="hero">
-
- <h1>
- 📚 الملخص الشامل لمفتش ومراقب الضرائب
- </h1>
-
- <p>
- هذا الملخص موجه للتحضير المنهجي لمواضيع الضرائب،
- المالية العامة، المحاسبة، الرقابة، المنازعات،
- الأخلاقيات والتعاون الضريبي الدولي في موريتانيا.
- </p>
-
- <div class="badges">
-
-  <span class="badge">
-   CGI
-  </span>
-
-  <span class="badge">
-   IS
-  </span>
-
-  <span class="badge">
-   TVA
-  </span>
-
-  <span class="badge">
-   IBAPP
-  </span>
-
-  <span class="badge">
-   ITS
-  </span>
-
-  <span class="badge">
-   IRCM
-  </span>
-
-  <span class="badge">
-   BEPS
-  </span>
-
-  <span class="badge">
-   CRS
-  </span>
-
-  <span class="badge">
-   FATCA
-  </span>
-
-  <span class="badge yellow">
-   تحديث 2026
-  </span>
-
- </div>
-
- <div class="btns">
-
-  <button
-   class="btn-yellow"
-   onclick="openAll()">
-   📖 فتح الكل
-  </button>
-
-  <button
-   class="btn"
-   onclick="closeAll()">
-   📕 إغلاق الكل
-  </button>
-
-  <button
-   class="btn"
-   onclick="window.print()">
-   🖨️ طباعة / PDF
-  </button>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 1
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  1 — أساسيات النظام الجبائي الموريتاني
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   مفهوم الضريبة
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    <b>الضريبة:</b>
-    مبلغ مالي تفرضه الدولة أو الجماعات المختصة
-    بموجب القانون لتمويل النفقات العامة وتحقيق أهداف
-    اقتصادية واجتماعية.
-
-   </div>
-
-   <div class="fr">
-    L'impôt est un prélèvement obligatoire établi par la loi
-    afin de financer les charges publiques et poursuivre
-    certains objectifs économiques et sociaux.
-   </div>
-
-   <h3>أهم الخصائص</h3>
-
-   <ul>
-    <li>إلزامية.</li>
-    <li>أساسها القانون.</li>
-    <li>تساهم في تمويل النفقات العامة.</li>
-    <li>يمكن أن تحقق أهدافًا اقتصادية واجتماعية.</li>
-    <li>تختلف عن الرسوم والإتاوات.</li>
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   مبدأ الشرعية الجبائية
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    لا يجوز إنشاء ضريبة أو تعديل عناصرها الأساسية
-    خارج الإطار القانوني المختص.
-
-   </div>
-
-   <p>
-    في أسئلة المسابقة انتبه إلى الكلمات:
-    <b>القانون — الوعاء — المعدل — التحصيل — الإعفاء.</b>
-   </p>
-
-   <div class="warning">
-    ⚠️ الفخ:
-    السلطة الإدارية لا تعني حرية مطلقة في فرض الضريبة.
-    يجب التمييز بين السلطة التقديرية في تطبيق القانون
-    وبين إنشاء قاعدة ضريبية جديدة.
-   </div>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   مصادر التشريع الجبائي
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ol>
-
-    <li>الدستور.</li>
-    <li>القوانين.</li>
-    <li>المدونة العامة للضرائب CGI.</li>
-    <li>قوانين المالية.</li>
-    <li>المراسيم واللوائح التطبيقية.</li>
-    <li>الاتفاقيات الدولية المصادق عليها وفق القواعد الدستورية.</li>
-
-   </ol>
-
-   <div class="warning">
-    في الامتحان لا تخلط بين النص الذي ينشئ الضريبة
-    والنص الذي يحدد كيفية تطبيقها.
-   </div>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 2 CGI
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  2 — المدونة العامة للضرائب CGI
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   CGI — Code Général des Impôts
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    القانون رقم <b>2019-018</b>
-    المؤرخ في 29 أبريل 2019
-    المتضمن المدونة العامة للضرائب.
-
-   </div>
-
-   <div class="fr">
-    Loi n° 2019-018 du 29 avril 2019
-    portant Code Général des Impôts.
-   </div>
-
-   <p>
-    من أهم أبوابه:
-   </p>
-
-   <ul>
-
-    <li>Impôt sur les sociétés — IS</li>
-
-    <li>IBAPP</li>
-
-    <li>Revenus fonciers</li>
-
-    <li>Traitements et salaires</li>
-
-    <li>IRCM</li>
-
-    <li>TVA</li>
-
-    <li>Droits d'enregistrement</li>
-
-    <li>Droits de timbre</li>
-
-    <li>Procédures fiscales</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   IS — Impôt sur les sociétés
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    ضريبة على الشركات والأشخاص المعنويين
-    الخاضعين لها وفق القانون.
-
-   </div>
-
-   <h3>طريقة التفكير في السؤال</h3>
-
-   <ol>
-
-    <li>من هو المكلف؟</li>
-
-    <li>ما هو النشاط أو الدخل؟</li>
-
-    <li>ما هو الوعاء؟</li>
-
-    <li>ما هو النظام الضريبي المطبق؟</li>
-
-    <li>ما هي الالتزامات التصريحية؟</li>
-
-    <li>ما هو أجل الدفع؟</li>
-
-   </ol>
-
-   <div class="warning">
-
-    ⚠️ لا تحفظ نسبة ضريبية من ملخص قديم دون
-    التحقق من قانون المالية أو التعديل الأخير.
-
-   </div>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   IBAPP
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    <b>
-     Impôt sur les bénéfices d'affaires des personnes physiques
-    </b>
-
-    ضريبة أرباح الأعمال للأشخاص الطبيعيين
-    وفق شروط ونظم المدونة.
-
-   </div>
-
-   <p>
-    في السؤال التطبيقي ركز على:
-   </p>
-
-   <ul>
-
-    <li>طبيعة النشاط.</li>
-
-    <li>رقم الأعمال أو عناصر الوعاء حسب النظام.</li>
-
-    <li>النظام الجبائي.</li>
-
-    <li>التصريح.</li>
-
-    <li>الدفع.</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   المرتبات والأجور ITS
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    يفرض الضريبة على الدخول الناتجة عن
-    traitements, salaires et indemnités
-    وفق الشروط المحددة في CGI.
-
-   </div>
-
-   <div class="fr">
-
-    Impôt sur les traitements et salaires
-
-   </div>
-
-   <p>
-    يجب التمييز بين:
-   </p>
-
-   <ul>
-
-    <li>الدخل الخاضع.</li>
-
-    <li>العناصر المستثناة أو المعفاة.</li>
-
-    <li>الوعاء.</li>
-
-    <li>الاقتطاع من المنبع.</li>
-
-    <li>التصريح والتحويل للإدارة.</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   IRCM
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    <b>
-     Impôt sur le Revenu des Capitaux Mobiliers
-    </b>
-
-    ضريبة على دخل رؤوس الأموال المنقولة،
-    حسب الحالات والأنظمة المحددة في المدونة.
-
-   </div>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   TVA — الضريبة على القيمة المضافة
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    TVA = Taxe sur la Valeur Ajoutée.
-
-    وهي ضريبة غير مباشرة ترتبط بالعمليات
-    والسلع والخدمات الخاضعة وفق القانون.
-
-   </div>
-
-   <h3>في السؤال التطبيقي</h3>
-
-   <ol>
-
-    <li>هل العملية خاضعة؟</li>
-
-    <li>هل يوجد إعفاء؟</li>
-
-    <li>ما هو الوعاء؟</li>
-
-    <li>ما هو المعدل القانوني؟</li>
-
-    <li>متى تصبح الضريبة مستحقة؟</li>
-
-    <li>هل يمكن خصم TVA المدخلات؟</li>
-
-    <li>هل التصريح والدفع تمّا في الأجل؟</li>
-
-   </ol>
-
-   <div class="formula">
-
-    TVA à payer =
-    TVA collectée − TVA déductible
-
-   </div>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 3 CONTROLE
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  3 — التفتيش والرقابة الجبائية
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   دور مفتش الضرائب
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ul>
-
-    <li>فحص الالتزام الجبائي.</li>
-
-    <li>تحليل التصريحات.</li>
-
-    <li>مقارنة التصريحات بالمحاسبة.</li>
-
-    <li>فحص الوثائق المؤيدة.</li>
-
-    <li>تحديد المخاطر الجبائية.</li>
-
-    <li>اقتراح التصحيح وفق الإجراءات القانونية.</li>
-
-    <li>احترام حقوق المكلف.</li>
-
-   </ul>
-
-   <div class="warning">
-
-    المفتش ليس خصمًا للمكلف؛
-    دوره تطبيق القانون والتحقق من صحة الوضعية الجبائية.
-   </div>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   منهجية الرقابة
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ol>
-
-    <li>جمع المعلومات.</li>
-
-    <li>تحليل المخاطر.</li>
-
-    <li>اختيار الملفات.</li>
-
-    <li>فحص المحاسبة.</li>
-
-    <li>مطابقة الوثائق.</li>
-
-    <li>مقارنة التصريحات.</li>
-
-    <li>تحديد الفروقات.</li>
-
-    <li>احترام المسطرة.</li>
-
-    <li>إبلاغ المكلف حسب القانون.</li>
-
-    <li>حساب التصحيح والجزاءات عند الاقتضاء.</li>
-
-   </ol>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   المحاسبة والتدقيق
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <p>
-    المفتش يركز على العلاقة بين:
-   </p>
-
-   <div class="formula">
-
-    Chiffre d'affaires
-    →
-    Comptabilité
-    →
-    Déclarations
-    →
-    Pièces justificatives
-    →
-    Paiements bancaires
-
-   </div>
-
-   <h3>مؤشرات الخطر</h3>
-
-   <ul>
-
-    <li>فرق بين البنك والصندوق.</li>
-
-    <li>مبيعات غير مسجلة.</li>
-
-    <li>مصروفات بلا وثائق.</li>
-
-    <li>فواتير غير صحيحة.</li>
-
-    <li>تضخم المصاريف.</li>
-
-    <li>اختلاف بين التصريح والمحاسبة.</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   حقوق المكلف
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ul>
-
-    <li>المعاملة وفق القانون.</li>
-
-    <li>احترام الإجراءات.</li>
-
-    <li>حق الدفاع وفق المسطرة.</li>
-
-    <li>حق معرفة أساس التصحيح وفق القواعد المطبقة.</li>
-
-    <li>احترام السرية المهنية.</li>
-
-   </ul>
-
-   <div class="danger">
-
-    ⚠️ المخالفة المهنية:
-    استغلال المعلومات لمصلحة شخصية،
-    التمييز، طلب منفعة، أو تجاوز الصلاحيات.
-   </div>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 4 FRAUDE
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  4 — التهرب والمنازعات والعقوبات
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   التهرب الضريبي
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    التهرب هو استعمال وسائل مخالفة للقانون
-    بقصد تخفيض أو تفادي الضريبة المستحقة.
-
-   </div>
-
-   <h3>أمثلة عامة</h3>
-
-   <ul>
-
-    <li>إخفاء جزء من رقم الأعمال.</li>
-
-    <li>إخفاء مداخيل.</li>
-
-    <li>فواتير وهمية.</li>
-
-    <li>محاسبة غير حقيقية.</li>
-
-    <li>تصريحات تتضمن معلومات كاذبة.</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   التخطيط والهندسة الضريبية
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    التخطيط الضريبي المشروع يستعمل الخيارات
-    التي يسمح بها القانون.
-
-   </div>
-
-   <div class="warning">
-
-    ⚠️ الفخ في QCM:
-    ليس كل تخفيض للضريبة تهربًا،
-    لكن استعمال وسائل مخالفة للقانون قد يتحول
-    إلى تهرب أو احتيال حسب الوقائع والنصوص.
-   </div>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   المنازعات الضريبية
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ol>
-
-    <li>وجود قرار أو مطالبة ضريبية.</li>
-
-    <li>اعتراض أو طعن وفق الإجراءات.</li>
-
-    <li>فحص الحجج والوثائق.</li>
-
-    <li>احترام الآجال.</li>
-
-    <li>اللجوء إلى الجهة المختصة عند الاقتضاء.</li>
-
-   </ol>
-
-   <div class="warning">
-
-    في الامتحان:
-    <b>الآجال والإجراءات والاختصاص</b>
-    أهم من الحفظ العشوائي.
-   </div>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 5 FINANCES PUBLIQUES
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  5 — المالية العامة والميزانية
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   قانون المالية
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    الإطار القانوني الأساسي لقوانين المالية
-    يشمل القانون النظامي رقم 2018-039،
-    مع تعديلات لاحقة.
-
-   </div>
-
-   <p>
-    من أنواع قوانين المالية:
-   </p>
-
-   <ul>
-
-    <li>Loi de finances de l'année</li>
-
-    <li>Loi de finances rectificative</li>
-
-    <li>Loi de règlement</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   مبادئ الميزانية
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ul>
-
-    <li>السنوية.</li>
-
-    <li>الوحدة.</li>
-
-    <li>الشمول.</li>
-
-    <li>التخصيص حسب القواعد.</li>
-
-    <li>الشفافية.</li>
-
-    <li>الرقابة.</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   تحديث 2026
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="warning">
-
-    🔔 انتبه:
-    في سنة 2026 صدر القانون النظامي
-    <b>2026-019</b>
-    المعدل لبعض أحكام القانون النظامي
-    <b>2018-039</b> المتعلق بقوانين المالية.
-
-   </div>
-
-   <p>
-    لذلك لا تعتمد في أسئلة المالية العامة
-    على نسخة قديمة فقط.
-   </p>
-
-   <p>
-    راجع آخر قانون مالية والنصوص المعدلة
-    قبل الامتحان.
-   </p>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 6 INTERNATIONAL
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  6 — الضرائب الدولية والاقتصاد الرقمي
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   الازدواج الضريبي الدولي
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    يحدث الازدواج عندما يخضع نفس الدخل
-    أو الوعاء لضرائب مماثلة في دولتين أو أكثر
-    في ظروف معينة.
-
-   </div>
-
-   <p>
-    الاتفاقيات الجبائية تهدف إلى تنظيم الاختصاص
-    الضريبي ومنع أو تخفيف الازدواج ومكافحة التهرب.
-   </p>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   BEPS
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="definition">
-
-    BEPS =
-    Base Erosion and Profit Shifting
-
-   </div>
-
-   <p>
-    يركز على مكافحة تآكل الوعاء الضريبي
-    وتحويل الأرباح بطريقة تؤدي إلى تجنب ضريبي
-    أو انخفاض غير مناسب في الضريبة.
-   </p>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   CRS و FATCA
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <table>
-
-    <tr>
-     <th>الاختصار</th>
-     <th>المعنى</th>
-     <th>الفكرة</th>
-    </tr>
-
-    <tr>
-     <td>CRS</td>
-     <td>Common Reporting Standard</td>
-     <td>معيار تبادل المعلومات المالية</td>
-    </tr>
-
-    <tr>
-     <td>FATCA</td>
-     <td>Foreign Account Tax Compliance Act</td>
-     <td>نظام أمريكي لمعلومات الحسابات المالية</td>
-    </tr>
-
-    <tr>
-     <td>BEPS</td>
-     <td>Base Erosion and Profit Shifting</td>
-     <td>مكافحة تآكل الوعاء وتحويل الأرباح</td>
-    </tr>
-
-   </table>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   الاقتصاد الرقمي
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ul>
-
-    <li>منصات رقمية.</li>
-
-    <li>خدمات عابرة للحدود.</li>
-
-    <li>تحديد مكان النشاط.</li>
-
-    <li>تحديد الوعاء الضريبي.</li>
-
-    <li>تبادل المعلومات.</li>
-
-    <li>التجارة الإلكترونية.</li>
-
-   </ul>
-
-   <div class="warning">
-
-    الفكرة الأساسية:
-    الاقتصاد الرقمي يصعّب أحيانًا تحديد مكان القيمة
-    والنشاط والمكلف، ولذلك يحتاج إلى تعاون دولي
-    وقواعد حديثة.
-   </div>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 7 ETHIQUE
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  7 — أخلاقيات المفتش والوظيفة العمومية
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   أخلاقيات المهنة
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <table>
-
-    <tr>
-     <th>المبدأ</th>
-     <th>التطبيق</th>
-    </tr>
-
-    <tr>
-     <td>النزاهة</td>
-     <td>عدم طلب أو قبول منفعة غير مشروعة</td>
-    </tr>
-
-    <tr>
-     <td>الحياد</td>
-     <td>معاملة المكلفين وفق القانون</td>
-    </tr>
-
-    <tr>
-     <td>السرية</td>
-     <td>عدم كشف المعلومات المهنية بلا أساس قانوني</td>
-    </tr>
-
-    <tr>
-     <td>المهنية</td>
-     <td>الاعتماد على الوثائق والقانون</td>
-    </tr>
-
-    <tr>
-     <td>المساءلة</td>
-     <td>تحمل مسؤولية القرارات والأعمال</td>
-    </tr>
-
-   </table>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   مكافحة الفساد
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ul>
-
-    <li>تجنب تضارب المصالح.</li>
-
-    <li>رفض الرشوة.</li>
-
-    <li>عدم استغلال المعلومات.</li>
-
-    <li>توثيق الإجراءات.</li>
-
-    <li>احترام التسلسل الإداري.</li>
-
-    <li>تطبيق القانون على الجميع.</li>
-
-   </ul>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 8 CALCUL
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  8 — أهم العلاقات والحسابات
- </h2>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   الحساب الجبائي الأساسي
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <div class="formula">
-
-    Impôt =
-    Base imposable × Taux
-
-   </div>
-
-   <div class="formula">
-
-    TVA due =
-    TVA collectée − TVA déductible
-
-   </div>
-
-   <div class="formula">
-
-    Résultat fiscal =
-    Résultat comptable
-    ± Réintégrations
-    − Déductions
-
-   </div>
-
-   <div class="formula">
-
-    Taux effectif =
-    Impôt payé ÷ Revenu imposable × 100
-
-   </div>
-
-  </div>
-
- </div>
-
-
- <div class="topic">
-
-  <div class="topic-title">
-   كيف تحل سؤال حسابي؟
-   <span>＋</span>
-  </div>
-
-  <div class="topic-content">
-
-   <ol>
-
-    <li>حدد نوع الضريبة.</li>
-
-    <li>حدد المكلف.</li>
-
-    <li>حدد الوعاء.</li>
-
-    <li>حدد العناصر القابلة للخصم.</li>
-
-    <li>حدد المعدل من النص الساري.</li>
-
-    <li>احسب.</li>
-
-    <li>تحقق من التقريب والوحدة.</li>
-
-    <li>تحقق من الإعفاء أو الحد الأدنى إن وجد.</li>
-
-   </ol>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PARTIE 9 VOCABULAIRE
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  9 — قاموس الاختصارات الضرورية
- </h2>
-
- <div class="card">
-
-  <table>
-
-   <tr>
-    <th>اختصار</th>
-    <th>Français</th>
-    <th>العربية</th>
-   </tr>
-
-   <tr>
-    <td>CGI</td>
-    <td>Code Général des Impôts</td>
-    <td>المدونة العامة للضرائب</td>
-   </tr>
-
-   <tr>
-    <td>IS</td>
-    <td>Impôt sur les Sociétés</td>
-    <td>الضريبة على الشركات</td>
-   </tr>
-
-   <tr>
-    <td>IBAPP</td>
-    <td>Impôt sur les Bénéfices d'Affaires des Personnes Physiques</td>
-    <td>ضريبة أرباح الأعمال للأشخاص الطبيعيين</td>
-   </tr>
-
-   <tr>
-    <td>TVA</td>
-    <td>Taxe sur la Valeur Ajoutée</td>
-    <td>الضريبة على القيمة المضافة</td>
-   </tr>
-
-   <tr>
-    <td>IRCM</td>
-    <td>Impôt sur le Revenu des Capitaux Mobiliers</td>
-    <td>ضريبة دخل رؤوس الأموال المنقولة</td>
-   </tr>
-
-   <tr>
-    <td>CRS</td>
-    <td>Common Reporting Standard</td>
-    <td>المعيار المشترك للإبلاغ</td>
-   </tr>
-
-   <tr>
-    <td>FATCA</td>
-    <td>Foreign Account Tax Compliance Act</td>
-    <td>قانون الامتثال الضريبي للحسابات الأجنبية</td>
-   </tr>
-
-   <tr>
-    <td>BEPS</td>
-    <td>Base Erosion and Profit Shifting</td>
-    <td>تآكل الوعاء وتحويل الأرباح</td>
-   </tr>
-
-   <tr>
-    <td>ISF</td>
-    <td>Impôt / système fiscal</td>
-    <td>يجب تحديد المقصود من السياق</td>
-   </tr>
-
-  </table>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     PIEGES QCM
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  10 — فخاخ QCM التي يجب الانتباه إليها
- </h2>
-
-
- <div class="grid">
-
-  <div class="card">
-
-   <h2>🎯 فخ المصطلحات</h2>
-
-   <p>
-    لا تخلط بين:
-   </p>
-
-   <ul>
-    <li>الوعاء</li>
-    <li>المعدل</li>
-    <li>الضريبة</li>
-    <li>التحصيل</li>
-    <li>التصريح</li>
-   </ul>
-
-  </div>
-
-
-  <div class="card">
-
-   <h2>⚠️ فخ النسب</h2>
-
-   <p>
-    إذا وجدت نسبة في سؤال،
-    تحقق أولًا من:
-   </p>
-
-   <ul>
-    <li>نوع الضريبة.</li>
-    <li>نوع المكلف.</li>
-    <li>النظام.</li>
-    <li>الفترة القانونية.</li>
-   </ul>
-
-  </div>
-
-
-  <div class="card">
-
-   <h2>⚠️ فخ كلمة «دائمًا»</h2>
-
-   <p>
-    كلمات مثل:
-    <b>دائمًا، أبدًا، جميع، فقط</b>
-    تجعل العبارة بحاجة إلى تدقيق شديد.
-   </p>
-
-  </div>
-
-
-  <div class="card">
-
-   <h2>🧠 فخ «صحيح جزئيًا»</h2>
-
-   <p>
-    بعض الاختيارات تحتوي معلومة صحيحة
-    ولكنها لا تجيب عن السؤال.
-   </p>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- =====================================================
-     STRATEGIE
-===================================================== -->
-
-<div class="section">
-
- <h2 class="section-title">
-  11 — استراتيجية الإجابة في المسابقة
- </h2>
-
-
- <div class="card">
-
-  <h3>المرحلة 1 — اقرأ السؤال</h3>
-
-  <p>
-   حدد أولًا: ماذا يريد السؤال؟
-   تعريف؟ نسبة؟ إجراء؟ اختصاص؟ حساب؟
-  </p>
-
-  <h3>المرحلة 2 — حدد الكلمة المفتاحية</h3>
-
-  <p>
-   مثال:
-   <b>«الوعاء»</b> ليس هو
-   <b>«المعدل»</b>.
-  </p>
-
-  <h3>المرحلة 3 — استبعد الواضح الخطأ</h3>
-
-  <p>
-   في QCM يمكنك أحيانًا استبعاد
-   2 أو 3 اختيارات قبل المقارنة النهائية.
-  </p>
-
-  <h3>المرحلة 4 — لا تستعمل الحفظ وحده</h3>
-
-  <p>
-   في السؤال التطبيقي:
-   افهم الحالة ثم طبق النص.
-  </p>
-
-  <div class="warning">
-
-   ⭐ قاعدة ذهبية:
-   <br>
-   <b>
-   مكلف → نشاط → وعاء → إعفاء/خصم → معدل → تصريح → دفع → رقابة
-   </b>
-
-  </div>
-
- </div>
-
-</div>
-
-
-<!-- SOURCES -->
-
-<div class="section">
-
- <h2 class="section-title">
-  12 — مراجع المراجعة الرسمية
- </h2>
-
- <div class="card">
-
-  <ul>
-
-   <li>
-    المدونة العامة للضرائب — قانون 2019-018.
-   </li>
-
-   <li>
-    القانون النظامي 2018-039 المتعلق بقوانين المالية.
-   </li>
-
-   <li>
-    القانون النظامي 2026-019 المعدل لبعض أحكام قانون المالية.
-   </li>
-
-   <li>
-    قوانين المالية السنوية والتكميلية.
-   </li>
-
-   <li>
-    النصوص التنظيمية والتطبيقية المنشورة من وزارة المالية.
-   </li>
-
-  </ul>
-
-  <div class="danger">
-
-   ⚠️ هذا الملخص أداة للمراجعة وليس بديلًا عن
-   النص القانوني الرسمي.
-   عند وجود تعارض، يُرجع إلى النص القانوني
-   الساري وآخر تعديل منشور.
-
-  </div>
-
- </div>
-
-</div>
-
-
-</div>
-
-
-<footer>
-
-🇲🇷
-ملخص تحضير مفتشي ومراقبي الضرائب — موريتانيا
-
-<br>
-
-CGI • Finance Publique • Contrôle Fiscal •
-Contentieux • Fiscalité Internationale
-
-</footer>
-
-
-<script>
-
-/* =====================================================
-   ACCORDION
-===================================================== */
-
-document.querySelectorAll(".topic-title")
-.forEach(title=>{
-
- title.addEventListener("click",()=>{
-
-   const topic=
-     title.parentElement;
-
-   topic.classList.toggle("open");
-
-   const icon=
-     title.querySelector("span");
-
-   if(topic.classList.contains("open"))
-      icon.textContent="−";
-   else
-      icon.textContent="＋";
-
- });
-
-});
-
-
-/* =====================================================
-   OPEN ALL
-===================================================== */
-
-function openAll(){
-
- document.querySelectorAll(".topic")
- .forEach(topic=>{
-
-   topic.classList.add("open");
-
-   const icon=
-    topic.querySelector(".topic-title span");
-
-   if(icon)
-      icon.textContent="−";
-
- });
-
-}
-
-
-/* =====================================================
-   CLOSE ALL
-===================================================== */
-
-function closeAll(){
-
- document.querySelectorAll(".topic")
- .forEach(topic=>{
-
-   topic.classList.remove("open");
-
-   const icon=
-    topic.querySelector(".topic-title span");
-
-   if(icon)
-      icon.textContent="＋";
-
- });
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-function searchTopics(){
-
- const text=
-   document
-    .getElementById("search")
-    .value
-    .toLowerCase()
-    .trim();
-
- document
-  .querySelectorAll(".topic")
-  .forEach(topic=>{
-
-    const content=
-      topic.innerText
-      .toLowerCase();
-
-    if(
-      text==="" ||
-      content.includes(text)
-    ){
-
-      topic.classList.remove("hidden");
-
-    }else{
-
-      topic.classList.add("hidden");
-
-    }
-
-  });
-
-}
-
-
-/* =====================================================
-   KEYBOARD SHORTCUT
-===================================================== */
-
-document.addEventListener("keydown",e=>{
-
- if(e.ctrlKey && e.key==="f"){
-
-   e.preventDefault();
-
-   document
-    .getElementById("search")
-    .focus();
-
- }
-
-});
-
-</script>
-
+    <div class="app-container">
+        <!-- الهيدر -->
+        <header>
+            <h1>⚖️ منصة المراجعة القانونية الشاملة ⚖️</h1>
+            <div class="author">أعداد: يحيى طالب عبد الله</div>
+            <div class="contact-info"><span>رقم اتصال وواتساب:</span> 30545727</div>
+            <div class="wish">توفيق للجميع</div>
+        </header>
+
+        <!-- أزرار التنقل -->
+        <div class="nav-tabs">
+            <button id="btnSummary" class="active" onclick="switchTab('summary')">📚 ملخص PDF</button>
+            <button id="btnQuiz1" onclick="switchTab('quiz1')">📝 اختبار 1 (60 سؤال)</button>
+            <button id="btnQuiz2" onclick="switchTab('quiz2')">🔥 اختبار 2 (20 سؤال صعب)</button>
+            <button id="btnQuiz3" onclick="switchTab('quiz4')">💎 صفحة احترافية</button>
+        </div>
+
+        <!-- المحتوى -->
+        <div class="content-area">
+
+            <!-- قسم الملخصات -->
+            <div id="summary" class="section active">
+                <div class="summary-card">
+                    <h3>📌 ملخص النظام الأساسي لموظفي كتابات الضبط والنيابات (مرسوم 171/2009)</h3>
+                    <p><strong>التصنيف:</strong> ينقسم الموظفون إلى ثلاثة أسلاك: كتاب الضبط الرئيسيين (الفئة أ)، كتاب الضبط (الفئة ب)، وكتاب العدل والنيابات (الفئة ج).</p>
+                    <p><strong>الترقية:</strong> تتم كل سنتين بالأقدمية داخل الدرجة. الترقية بين الدرجات تتم بالاختيار أو الامتحان المهني. الدرجة الخاصة تتطلب 4 سنوات أقدمية على الأقل في الدرجة الأولى.</p>
+                    <p><strong>شروط الولوج:</strong> كتاب الضبط الرئيسيين: شهادة عليا في القانون/التشريع. كتاب الضبط: شهادة إعدادية. كتاب العدل: شهادة ابتدائية. مع تكوين متخصص في جميع الحالات.</p>
+                    <p><strong>اليمين:</strong> يؤدي الموظفون اليمين أمام المحكمة قبل مباشرة مهامهم.</p>
+                </div>
+                <div class="summary-card">
+                    <h3>📌 ملخص التنظيم القضائي الموريتاني</h3>
+                    <p><strong>المحاكم:</strong> المحكمة العليا، محاكم الاستئناف، محاكم الولايات، المحاكم الجنائية، التجارية، محاكم الشغل، ومحاكم المقاطعات.</p>
+                    <p><strong>المبادئ:</strong> استقلال القضاء، المساواة أمام القضاء، مجانية التقاضي، علنية الجلسات، التقاضي على درجتين.</p>
+                    <p><strong>النيابة العامة:</strong> تمارس الدعوى العمومية، وتخضع للسلطة الرئاسية، وتتميز بوحدة النيابة واستقلال قضاة النيابة عن قضاة الحكم.</p>
+                    <p><strong>المسطرة الجنائية:</strong> تفترض البراءة، لا يعتد بالاعتراف المنتزع بالإكراه، الشك يفسر لصالح المتهم. السلطات المكلفة: الشرطة القضائية والنيابة العامة.</p>
+                </div>
+                <div class="summary-card">
+                    <h3>📌 ملخص المسطرة المدنية والطعون</h3>
+                    <p><strong>شروط الدعوى:</strong> الأهلية، الصفة، المصلحة. الطلبات: أصلية وعارضة (إضافية، مقابلة، تدخل، إدخال).</p>
+                    <p><strong>الدفوع:</strong> شكلية (إجرائية)، موضوعية (جوهر النزاع)، ودفع بعدم القبول.</p>
+                    <p><strong>الطعون العادية:</strong> المعارضة (في الأحكام الغيابية)، الاستئناف (في الأحكام الابتدائية).</p>
+                    <p><strong>الطعون غير العادية:</strong> اعتراض الغير، طلب المراجعة، الطعن بالنقض، الطعن لصالح القانون.</p>
+                </div>
+                <div class="summary-card">
+                    <h3>📌 ملخص القضاء الواقف والنيابة العامة</h3>
+                    <p><strong>القضاء الواقف:</strong> يشمل قضاة النيابة العامة والشرطة القضائية. النيابة العامة تمارس الدعوى العمومية وتطلب تطبيق القانون.</p>
+                    <p><strong>مميزات النيابة:</strong> جهاز قضائي خاص، خاضع للسلطة الرئاسية، وحدوي، مستقل عن قضاة الحكم والتحقيق، لا يمكن رد قضاته، غير مسؤول، وغير مرتبط بمطالبه (قلم أسير ولسان حر).</p>
+                    <p><strong>الشرطة القضائية:</strong> تتولى البحث والتحقيق الأولي، وتتلقى الشكاوى، وتنفذ أوامر التحقيق.</p>
+                    <p><strong>حالات التلبس:</strong> ضبط الفاعل متلبساً، مطاردة الجمهور، وجود آثار أو أدلة قريبة من ارتكاب الفعل.</p>
+                </div>
+            </div>
+
+            <!-- اختبار 1 -->
+            <div id="quiz1" class="section">
+                <div class="quiz-header">
+                    <h2>📝 الاختبار الأول: 60 سؤالاً مختلفاً 100%</h2>
+                    <div class="score-display">النقاط: <span id="score1">0</span> / 15</div>
+                </div>
+                <div id="quiz1-container"></div>
+                <button class="submit-btn" id="submit1" onclick="submitQuiz1()">عرض النتيجة النهائية</button>
+                <div id="result1" class="result-box"></div>
+            </div>
+
+            <!-- اختبار 2 -->
+            <div id="quiz2" class="section">
+                <div class="quiz-header">
+                    <h2>🔥 الاختبار الثاني: 20 سؤالاً صعباً جداً 100%</h2>
+                    <div class="score-display">النقاط: <span id="score2">0</span> / 15</div>
+                </div>
+                <div id="quiz2-container"></div>
+                <button class="submit-btn" id="submit2" onclick="submitQuiz2()">عرض النتيجة النهائية</button>
+                <div id="result2" class="result-box"></div>
+            </div>
+
+            <!-- اختبار 3 -->
+            <div id="quiz3" class="section">
+                <div class="quiz-header">
+                    <h2>⚖️ الاختبار الثالث: ثقافة عامة للقضاة والجريمة والعدل (متوسط وصعب)</h2>
+                    <div class="score-display">النقاط: <span id="score3">0</span> / 15</div>
+                </div>
+                <div id="quiz3-container"></div>
+                <button class="submit-btn" id="submit3" onclick="submitQuiz3()">عرض النتيجة النهائية</button>
+                <div id="result3" class="result-box"></div>
+            </div>
+
+            <!-- الصفحة الاحترافية -->
+            <div id="quiz4" class="section">
+                <div class="pro-page">
+                    <h2>💎 الصفحة الاحترافية</h2>
+                    <div class="card">
+                        <p>منصة المراجعة القانونية الشاملة</p>
+                        <p>للمساطر المدنية والجنائية والتنظيم القضائي الموريتاني</p>
+                        <hr>
+                        <p class="big-number">100</p>
+                        <p>سؤال متنوع في القانون القضائي والمساطر</p>
+                        <p style="font-size:1rem; color:#555;">اختبار 1: 60 سؤال | اختبار 2: 20 سؤال | اختبار 3: ثقافة عامة</p>
+                        <hr>
+                        <p class="author-line">أعداد: يحيى طالب عبد الله</p>
+                        <p class="contact-line"><span>رقم اتصال وواتساب:</span> 30545727</p>
+                        <p style="color: var(--green-dark); font-weight: bold; margin-top: 15px; font-size:1.3rem;">توفيق للجميع</p>
+                        <div class="badge">⚖️ النظام القضائي الموريتاني ⚖️</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // ==================== البيانات ====================
+        
+        // الاختبار الأول: 60 سؤالاً مختلفاً 100%
+        const quiz1Data = [
+            { id: 1, type: 1, q: "ما هو المرسوم الذي يتضمن النظام الأساسي الخاص بموظفي كتابات الضبط والنيابات؟", options: ["مرسوم 171/2009", "مرسوم 93-09", "مرسوم 74/01", "مرسوم 386/69"], correct: [0] },
+            { id: 2, type: 1, q: "ينقسم موظفو كتابات الضبط والنيابات إلى كم فئة؟", options: ["فئتين", "ثلاث فئات", "أربع فئات", "خمس فئات"], correct: [1] },
+            { id: 3, type: 1, q: "من هم الموظفون المصنفون في الفئة (أ)؟", options: ["كتاب العدل والنيابات", "كتاب الضبط", "كتاب الضبط الرئيسيين", "المساعدون الإداريون"], correct: [2] },
+            { id: 4, type: 1, q: "ما هي المدة المطلوبة للتقدم في الرتبة داخل الدرجة نفسها؟", options: ["سنة واحدة", "سنتان", "ثلاث سنوات", "أربع سنوات"], correct: [1] },
+            { id: 5, type: 1, q: "ما هي أقدمية الدرجة الأولى المطلوبة للتعيين في الدرجة الخاصة؟", options: ["سنتان", "ثلاث سنوات", "أربع سنوات", "خمس سنوات"], correct: [2] },
+            { id: 6, type: 1, q: "ما هو الشرط المتعلق بالعقوبات التأديبية للتعيين في الدرجة الخاصة؟", options: ["عدم التعرض لعقوبة تأديبية", "التعرض لعقوبة تأديبية واحدة فقط", "لا يشترط أي شرط", "التعرض لعقوبتين"], correct: [0] },
+            { id: 7, type: 1, q: "ما هي مدة التكوين الممتد المطلوب لاكتساب المعارف المهنية للدرجة الخاصة؟", options: ["ستة أشهر", "تسعة أشهر", "سنة كاملة", "ثمانية عشر شهراً"], correct: [1] },
+            { id: 8, type: 1, q: "من هو المسؤول عن تسيير الأسلاك المنتمية لمجال التخصص؟", options: ["وزير الوظيفة العمومية", "وزير المالية", "وزير العدل", "رئيس المحكمة العليا"], correct: [2] },
+            { id: 9, type: 1, q: "ما هي الشهادة المطلوبة لولوج سلك كتاب الضبط الرئيسيين؟", options: ["شهادة ابتدائية", "شهادة إعدادية", "شهادة عليا في القانون أو التشريع", "شهادة بكالوريا فقط"], correct: [2] },
+            { id: 10, type: 1, q: "ما هو السن الأقصى عند الاكتتاب لكتاب الضبط الرئيسيين؟", options: ["25 سنة", "27 سنة", "30 سنة", "35 سنة"], correct: [2] },
+            { id: 11, type: 1, q: "ما هو السن الأقصى عند الاكتتاب لكتاب الضبط؟", options: ["25 سنة", "27 سنة", "30 سنة", "35 سنة"], correct: [1] },
+            { id: 12, type: 1, q: "ما هو السن الأقصى عند الاكتتاب لكتاب العدل والنيابات؟", options: ["25 سنة", "27 سنة", "30 سنة", "35 سنة"], correct: [0] },
+            { id: 13, type: 1, q: "أين يؤدي كتاب الضبط الرئيسيون وكتاب الضبط اليمين القانونية؟", options: ["أمام وزير العدل", "أمام المحكمة العليا", "أمام محكمة الاستئناف", "أمام محكمة الولاية"], correct: [2] },
+            { id: 14, type: 1, q: "ما هي المادة التي تنص على أن كل تصرف مخل بالواجبات المهنية يشكل خطأ تأديبياً؟", options: ["المادة 18", "المادة 19", "المادة 20", "المادة 21"], correct: [2] },
+            { id: 15, type: 1, q: "هل يعتبر كتاب الضبط أعضاء من المحكمة التي يمارسون فيها وظائفهم؟", options: ["نعم", "لا", "فقط كتاب الضبط الرئيسيين", "فقط في المحاكم التجارية"], correct: [0] },
+            { id: 16, type: 2, q: "ما هي الحالات التي لا يمكن فيها لكاتب الضبط حضور جلسة أو مساعدة قاضٍ؟ (اختر إجابتين)", options: ["إذا تعلق الأمر بمصالحهم الشخصية", "إذا تعلق الأمر بمصالح شخص يمثلونه بوكالة", "إذا كان القاضي من نفس المدينة", "إذا كان هناك زميل آخر في الجلسة"], correct: [0, 1] },
+            { id: 17, type: 2, q: "ما هي شروط التعيين في الدرجة الخاصة؟ (اختر إجابتين)", options: ["أقدمية 4 سنوات في الدرجة الأولى", "عدم التعرض لعقوبة تأديبية", "أقدمية سنتين في الدرجة الثانية", "الحصول على شهادة الدكتوراه"], correct: [0, 1] },
+            { id: 18, type: 3, q: "ما هي طرق التقدم من درجة إلى درجة أعلى؟ (اختر 3 إجابات)", options: ["الاختيار", "الامتحان المهني", "الأقدمية فقط", "التسجيل على جدول التقدم السنوي", "الترقية التلقائية"], correct: [0, 1, 3] },
+            { id: 19, type: 1, q: "ما هو القانون الذي يحدد النظام العام للموظفين في موريتانيا؟", options: ["القانون 93-09", "القانون 74-01", "القانون 2005-001", "القانون 84-157"], correct: [0] },
+            { id: 20, type: 1, q: "ما هو الموضوع الرئيسي لقانون المسطرة الجنائية؟", options: ["تنظيم المرافق العامة", "تنظيم مراحل اقتضاء حق الدولة في العقاب", "تنظيم العلاقات المدنية", "تنظيم العقود التجارية"], correct: [1] },
+            { id: 21, type: 1, q: "ما هو المبدأ الذي يعني أن الأصل في الإنسان البراءة؟", options: ["مبدأ حسن النية", "مبدأ البراءة", "مبدأ الشك يفسر لصالح المتهم", "مبدأ المساواة"], correct: [1] },
+            { id: 22, type: 1, q: "من هي الجهة التي تمارس الدعوى العمومية؟", options: ["الشرطة القضائية", "النيابة العامة", "قاضي التحقيق", "المحكمة العليا"], correct: [1] },
+            { id: 23, type: 1, q: "ما هو الطعن الذي يهدف إلى إلغاء أو تعديل حكم صادر عن محكمة الدرجة الأولى؟", options: ["المعارضة", "الاستئناف", "النقض", "المراجعة"], correct: [1] },
+            { id: 24, type: 1, q: "ما هو الطعن الذي يهدف إلى الرجوع في حكم صدر غيابياً؟", options: ["الاستئناف", "النقض", "المعارضة", "اعتراض الغير"], correct: [2] },
+            { id: 25, type: 1, q: "كم عدد محاكم الاستئناف العامة الموجودة حالياً في موريتانيا؟", options: ["محكمة واحدة", "محكمتان", "ثلاث محاكم", "أربع محاكم"], correct: [3] },
+            { id: 26, type: 1, q: "أين توجد المحكمة التجارية في موريتانيا؟", options: ["نواكشوط فقط", "نواكشوط ونواذيبو", "نواكشوط وألاك", "في جميع الولايات"], correct: [1] },
+            { id: 27, type: 1, q: "ما هو الاسم الذي يطلق على ممثل النيابة العامة لدى محكمة الاستئناف؟", options: ["وكيل الجمهورية", "المدعي العام", "قاضي التحقيق", "رئيس المحكمة"], correct: [1] },
+            { id: 28, type: 1, q: "ما هي المادة التي تنص على أن التحقيق يكون سرياً؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [0] },
+            { id: 29, type: 1, q: "ما هو الطعن الذي يهدف إلى تصحيح وضعيات الأحكام المعيبة قانونياً ولم يتقدم أي طرف للطعن فيها؟", options: ["الطعن بالنقض", "الطعن لصالح القانون", "طلب المراجعة", "اعتراض الغير"], correct: [1] },
+            { id: 30, type: 1, q: "ما هي المدة التي تتقادم بها الدعوى العمومية في القضايا الجنائية؟", options: ["3 سنوات", "5 سنوات", "10 سنوات", "15 سنة"], correct: [2] },
+            { id: 31, type: 1, q: "ما هو الشرط الذي يجب أن يتوفر في الحق لاقتضاء التنفيذ الجبري؟", options: ["أن يكون مؤكد الوجود", "أن يكون معلقاً على شرط", "أن يكون مستقبلياً", "أن يكون غير محدد المقدار"], correct: [0] },
+            { id: 32, type: 1, q: "ما هو الإجراء الذي يهدف إلى منع المدين من تهريب أمواله؟", options: ["الحجز التنفيذي", "الحجز التحفظي", "البيع بالمزاد", "الصلح"], correct: [1] },
+            { id: 33, type: 1, q: "من هو القاضي المختص بالنظر في القضايا الاستعجالية؟", options: ["قاضي التحقيق", "رئيس المحكمة", "وكيل الجمهورية", "قاضي الحكم"], correct: [1] },
+            { id: 34, type: 1, q: "ما هي المدة التي يجب أن يوجه فيها إنذار للمدين قبل صيرورة الحجز التحفظي إلى حجز تنفيذي؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [2] },
+            { id: 35, type: 1, q: "ما هي المادة التي تعطي النيابة العامة الحق في حفظ الدعوى العمومية؟", options: ["المادة 36", "المادة 51", "المادة 52", "المادة 11"], correct: [0] },
+            { id: 36, type: 1, q: "ما هو الطعن الذي يهدف إلى مراجعة حكم حائز على قوة الشيء المقضي به؟", options: ["الاستئناف", "النقض", "طلب المراجعة", "المعارضة"], correct: [2] },
+            { id: 37, type: 1, q: "ما هي المدة التي يقدم فيها الطعن بالاستئناف في المواد المدنية؟", options: ["8 أيام", "15 يوماً", "30 يوماً", "شهران"], correct: [1] },
+            { id: 38, type: 1, q: "ما هي المدة التي يقدم فيها الطعن بالنقض في المادة الجزائية؟", options: ["8 أيام", "15 يوماً", "30 يوماً", "شهران"], correct: [1] },
+            { id: 39, type: 1, q: "ما هو الاسم الذي يطلق على المحكمة المختصة بالنظر في جرائم الفساد؟", options: ["المحكمة الجنائية", "المحكمة الجنائية الخاصة", "المحكمة الجنائية المختصة في قضايا الفساد", "المحكمة التجارية"], correct: [2] },
+            { id: 40, type: 1, q: "ما هي المادة التي تنص على أن الشك يفسر لصالح المتهم؟", options: ["المادة 36", "المادة 51", "مبدأ عام في المسطرة الجنائية", "المادة 11"], correct: [2] },
+            { id: 41, type: 2, q: "ما هي خصائص الدفوع الشكلية؟ (اختر إجابتين)", options: ["تتعلق بالإجراءات", "يجب تقديمها قبل أي دفاع في الجوهر", "تتعلق بجوهر النزاع", "يمكن إثارتها في أي وقت"], correct: [0, 1] },
+            { id: 42, type: 2, q: "ما هي شروط قبول الدعوى؟ (اختر إجابتين)", options: ["الأهلية", "المصلحة", "أن يكون الحق مشروعاً", "أن يكون المدعي حاضراً"], correct: [0, 1] },
+            { id: 43, type: 2, q: "ما هي الطعون غير العادية؟ (اختر إجابتين)", options: ["الاستئناف", "النقض", "المعارضة", "طلب المراجعة"], correct: [1, 3] },
+            { id: 44, type: 3, q: "ما هي شروط التنفيذ الجبري؟ (اختر 3 إجابات)", options: ["أن يكون الحق مؤكد الوجود", "أن يكون الحق حال الأداء", "أن يكون الحق معين المقدار", "أن يكون الحق مستقبلياً", "أن يكون الحق معلقاً على شرط"], correct: [0, 1, 2] },
+            { id: 45, type: 3, q: "ما هي مميزات النيابة العامة؟ (اختر 3 إجابات)", options: ["الوحدة", "الاستقلال عن قضاة الحكم", "عدم إمكانية رد قضاتها", "التبعية للسلطة التشريعية", "المسؤولية الشخصية"], correct: [0, 1, 2] },
+            { id: 46, type: 1, q: "ما هي المادة التي تنص على أن كل طلب أصلي يجب أن يشتمل على تعيين الأطراف وبيان الموضوع؟", options: ["المادة 51", "المادة 11", "قواعد المسطرة المدنية", "المادة 36"], correct: [2] },
+            { id: 47, type: 1, q: "ما هو الطعن الذي يهدف إلى حماية حقوق الغير الذي لم يكن طرفاً في الخصومة؟", options: ["الاستئناف", "النقض", "اعتراض الغير", "المعارضة"], correct: [2] },
+            { id: 48, type: 1, q: "ما هي المدة التي يجب أن يودع فيها دفتر الشروط في الحجز العقاري؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [3] },
+            { id: 49, type: 1, q: "ما هو الاسم الذي يطلق على القاضي المكلف بالتحقيق في الجرائم؟", options: ["قاضي الحكم", "قاضي التحقيق", "وكيل الجمهورية", "رئيس المحكمة"], correct: [1] },
+            { id: 50, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تقدم طلباتها كتابة وبشكل شفهي؟", options: ["المادة 36", "المادة 51", "قواعد المسطرة الجنائية", "المادة 11"], correct: [2] },
+            { id: 51, type: 1, q: "ما هي المدة التي يجب أن يبلغ فيها أمر الحجز للمحجوز لديه؟", options: ["فوراً", "خلال 48 ساعة", "خلال 8 أيام", "خلال 15 يوماً"], correct: [0] },
+            { id: 52, type: 1, q: "ما هو الطعن الذي يهدف إلى إثبات عدم مطابقة الحكم للقواعد القانونية؟", options: ["الاستئناف", "النقض", "المعارضة", "المراجعة"], correct: [1] },
+            { id: 53, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تخضع للسلطة الرئاسية؟", options: ["المادة 36", "المادة 51", "مبدأ عام في التنظيم القضائي", "المادة 11"], correct: [2] },
+            { id: 54, type: 1, q: "ما هي المدة التي يجب أن يقدم فيها الطعن بالاستئناف في المواد الجنائية؟", options: ["8 أيام", "15 يوماً", "30 يوماً", "شهران"], correct: [1] },
+            { id: 55, type: 1, q: "ما هو الاسم الذي يطلق على المحكمة المختصة بالنظر في جرائم الاسترقاق والهجرة غير الشرعية؟", options: ["المحكمة الجنائية", "المحكمة الجنائية الخاصة", "المحكمة الجنائية المتخصصة", "المحكمة التجارية"], correct: [2] },
+            { id: 56, type: 1, q: "ما هي المادة التي تنص على أن التحقيق الابتدائي يكون سرياً؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [3] },
+            { id: 57, type: 1, q: "ما هو الطعن الذي يهدف إلى حماية حقوق الدائن؟", options: ["الحجز التحفظي", "الحجز التنفيذي", "الصلح", "التحكيم"], correct: [0] },
+            { id: 58, type: 1, q: "ما هي المدة التي يجب أن ينتظرها الدائن قبل بيع المحجوزات في الحجز التنفيذي؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [0] },
+            { id: 59, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تمثل لدى كل محكمة جزائية؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [0] },
+            { id: 60, type: 1, q: "ما هو الطعن الذي يهدف إلى إعادة النظر في حكم صدر بناءً على شهادات كاذبة؟", options: ["الاستئناف", "النقض", "طلب المراجعة", "المعارضة"], correct: [2] },
+        ];
+
+        // الاختبار الثاني: 20 سؤالاً صعباً جداً 100%
+        const quiz2Data = [
+            { id: 1, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة لا يمكن رد قضاتها؟", options: ["المادة 36", "المادة 51", "مبدأ عام في التنظيم القضائي", "المادة 11"], correct: [2] },
+            { id: 2, type: 1, q: "ما هو الشرط الذي يجب أن يتوفر في الحجز التحفظي ليكون صحيحاً؟", options: ["حالة الاستعجال والخطر", "وجود حكم نهائي", "موافقة المدين", "تدخل النيابة العامة"], correct: [0] },
+            { id: 3, type: 1, q: "ما هي المدة التي يجب أن ينتظرها المدين قبل تنفيذ الحجز العقاري؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [2] },
+            { id: 4, type: 1, q: "ما هو الطعن الذي يهدف إلى إلغاء حكم صادر عن محكمة الاستئناف؟", options: ["الاستئناف", "النقض", "المعارضة", "المراجعة"], correct: [1] },
+            { id: 5, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة لا ترتبط بمطالبها؟", options: ["المادة 36", "المادة 51", "مبدأ عام (قلم أسير ولسان حر)", "المادة 11"], correct: [2] },
+            { id: 6, type: 1, q: "ما هو الشرط الشكلي لاقتضاء الحقوق عبر التنفيذ الجبري؟", options: ["أن يكون السند صادراً عن جهة مختصة", "أن يكون السند شفهياً", "أن يكون السند غير محدد", "أن يكون السند مستقبلياً"], correct: [0] },
+            { id: 7, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تمثل لدى كل محكمة جزائية؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [0] },
+            { id: 8, type: 1, q: "ما هو الطعن الذي يهدف إلى إعادة النظر في حكم صدر بناءً على تدليس؟", options: ["الاستئناف", "النقض", "طلب المراجعة", "المعارضة"], correct: [2] },
+            { id: 9, type: 1, q: "ما هي المدة التي يجب أن يقدم فيها الطعن بالنقض في المواد المدنية؟", options: ["15 يوماً", "30 يوماً", "شهران", "3 أشهر"], correct: [2] },
+            { id: 10, type: 1, q: "ما هو الطعن الذي يهدف إلى حماية حقوق الغير الذي لم يكن طرفاً في الخصومة؟", options: ["الاستئناف", "النقض", "اعتراض الغير", "المعارضة"], correct: [2] },
+            { id: 11, type: 1, q: "ما هي المادة التي تنص على أن التحقيق يكون سرياً؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [0] },
+            { id: 12, type: 1, q: "ما هو الشرط الذي يجب أن يتوفر في الحق لاقتضاء التنفيذ الجبري؟", options: ["أن يكون مؤكد الوجود", "أن يكون معلقاً على شرط", "أن يكون مستقبلياً", "أن يكون غير محدد المقدار"], correct: [0] },
+            { id: 13, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تخضع للسلطة الرئاسية؟", options: ["المادة 36", "المادة 51", "مبدأ عام في التنظيم القضائي", "المادة 11"], correct: [2] },
+            { id: 14, type: 1, q: "ما هو الطعن الذي يهدف إلى إثبات عدم مطابقة الحكم للقواعد القانونية؟", options: ["الاستئناف", "النقض", "المعارضة", "المراجعة"], correct: [1] },
+            { id: 15, type: 1, q: "ما هي المدة التي يجب أن ينتظرها الدائن قبل بيع المحجوزات في الحجز التنفيذي؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [0] },
+            { id: 16, type: 1, q: "ما هو الاسم الذي يطلق على المحكمة المختصة بالنظر في جرائم الفساد؟", options: ["المحكمة الجنائية", "المحكمة الجنائية الخاصة", "المحكمة الجنائية المختصة في قضايا الفساد", "المحكمة التجارية"], correct: [2] },
+            { id: 17, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة لا يمكن رد قضاتها؟", options: ["المادة 36", "المادة 51", "مبدأ عام في التنظيم القضائي", "المادة 11"], correct: [2] },
+            { id: 18, type: 1, q: "ما هو الشرط الشكلي لاقتضاء الحقوق عبر التنفيذ الجبري؟", options: ["أن يكون السند صادراً عن جهة مختصة", "أن يكون السند شفهياً", "أن يكون السند غير محدد", "أن يكون السند مستقبلياً"], correct: [0] },
+            { id: 19, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تقدم طلباتها كتابة وبشكل شفهي؟", options: ["المادة 36", "المادة 51", "قواعد المسطرة الجنائية", "المادة 11"], correct: [2] },
+            { id: 20, type: 1, q: "ما هو الطعن الذي يهدف إلى إعادة النظر في حكم صدر بناءً على شهادات كاذبة؟", options: ["الاستئناف", "النقض", "طلب المراجعة", "المعارضة"], correct: [2] },
+        ];
+
+        // الاختبار الثالث: ثقافة عامة للقضاة والجريمة والعدل (متوسط وصعب)
+        const quiz3Data = [
+            { id: 1, type: 1, q: "ما هو القانون الذي يحدد النظام العام للموظفين في موريتانيا؟", options: ["القانون 93-09", "القانون 74-01", "القانون 2005-001", "القانون 84-157"], correct: [0] },
+            { id: 2, type: 1, q: "ما هو الموضوع الرئيسي لقانون المسطرة الجنائية؟", options: ["تنظيم المرافق العامة", "تنظيم مراحل اقتضاء حق الدولة في العقاب", "تنظيم العلاقات المدنية", "تنظيم العقود التجارية"], correct: [1] },
+            { id: 3, type: 1, q: "ما هو المبدأ الذي يعني أن الأصل في الإنسان البراءة؟", options: ["مبدأ حسن النية", "مبدأ البراءة", "مبدأ الشك يفسر لصالح المتهم", "مبدأ المساواة"], correct: [1] },
+            { id: 4, type: 1, q: "من هي الجهة التي تمارس الدعوى العمومية؟", options: ["الشرطة القضائية", "النيابة العامة", "قاضي التحقيق", "المحكمة العليا"], correct: [1] },
+            { id: 5, type: 1, q: "ما هو الطعن الذي يهدف إلى إلغاء أو تعديل حكم صادر عن محكمة الدرجة الأولى؟", options: ["المعارضة", "الاستئناف", "النقض", "المراجعة"], correct: [1] },
+            { id: 6, type: 1, q: "ما هو الطعن الذي يهدف إلى الرجوع في حكم صدر غيابياً؟", options: ["الاستئناف", "النقض", "المعارضة", "اعتراض الغير"], correct: [2] },
+            { id: 7, type: 1, q: "كم عدد محاكم الاستئناف العامة الموجودة حالياً في موريتانيا؟", options: ["محكمة واحدة", "محكمتان", "ثلاث محاكم", "أربع محاكم"], correct: [3] },
+            { id: 8, type: 1, q: "أين توجد المحكمة التجارية في موريتانيا؟", options: ["نواكشوط فقط", "نواكشوط ونواذيبو", "نواكشوط وألاك", "في جميع الولايات"], correct: [1] },
+            { id: 9, type: 1, q: "ما هو الاسم الذي يطلق على ممثل النيابة العامة لدى محكمة الاستئناف؟", options: ["وكيل الجمهورية", "المدعي العام", "قاضي التحقيق", "رئيس المحكمة"], correct: [1] },
+            { id: 10, type: 1, q: "ما هي المادة التي تنص على أن التحقيق يكون سرياً؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [0] },
+            { id: 11, type: 1, q: "ما هو الطعن الذي يهدف إلى تصحيح وضعيات الأحكام المعيبة قانونياً ولم يتقدم أي طرف للطعن فيها؟", options: ["الطعن بالنقض", "الطعن لصالح القانون", "طلب المراجعة", "اعتراض الغير"], correct: [1] },
+            { id: 12, type: 1, q: "ما هي المدة التي تتقادم بها الدعوى العمومية في القضايا الجنائية؟", options: ["3 سنوات", "5 سنوات", "10 سنوات", "15 سنة"], correct: [2] },
+            { id: 13, type: 1, q: "ما هو الشرط الذي يجب أن يتوفر في الحق لاقتضاء التنفيذ الجبري؟", options: ["أن يكون مؤكد الوجود", "أن يكون معلقاً على شرط", "أن يكون مستقبلياً", "أن يكون غير محدد المقدار"], correct: [0] },
+            { id: 14, type: 1, q: "ما هو الإجراء الذي يهدف إلى منع المدين من تهريب أمواله؟", options: ["الحجز التنفيذي", "الحجز التحفظي", "البيع بالمزاد", "الصلح"], correct: [1] },
+            { id: 15, type: 1, q: "من هو القاضي المختص بالنظر في القضايا الاستعجالية؟", options: ["قاضي التحقيق", "رئيس المحكمة", "وكيل الجمهورية", "قاضي الحكم"], correct: [1] },
+            { id: 16, type: 1, q: "ما هي المدة التي يجب أن يوجه فيها إنذار للمدين قبل صيرورة الحجز التحفظي إلى حجز تنفيذي؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [2] },
+            { id: 17, type: 1, q: "ما هي المادة التي تعطي النيابة العامة الحق في حفظ الدعوى العمومية؟", options: ["المادة 36", "المادة 51", "المادة 52", "المادة 11"], correct: [0] },
+            { id: 18, type: 1, q: "ما هو الطعن الذي يهدف إلى مراجعة حكم حائز على قوة الشيء المقضي به؟", options: ["الاستئناف", "النقض", "طلب المراجعة", "المعارضة"], correct: [2] },
+            { id: 19, type: 1, q: "ما هي المدة التي يقدم فيها الطعن بالاستئناف في المواد المدنية؟", options: ["8 أيام", "15 يوماً", "30 يوماً", "شهران"], correct: [1] },
+            { id: 20, type: 1, q: "ما هي المدة التي يقدم فيها الطعن بالنقض في المادة الجزائية؟", options: ["8 أيام", "15 يوماً", "30 يوماً", "شهران"], correct: [1] },
+            { id: 21, type: 1, q: "ما هو الاسم الذي يطلق على المحكمة المختصة بالنظر في جرائم الفساد؟", options: ["المحكمة الجنائية", "المحكمة الجنائية الخاصة", "المحكمة الجنائية المختصة في قضايا الفساد", "المحكمة التجارية"], correct: [2] },
+            { id: 22, type: 1, q: "ما هي المادة التي تنص على أن الشك يفسر لصالح المتهم؟", options: ["المادة 36", "المادة 51", "مبدأ عام في المسطرة الجنائية", "المادة 11"], correct: [2] },
+            { id: 23, type: 2, q: "ما هي خصائص الدفوع الشكلية؟ (اختر إجابتين)", options: ["تتعلق بالإجراءات", "يجب تقديمها قبل أي دفاع في الجوهر", "تتعلق بجوهر النزاع", "يمكن إثارتها في أي وقت"], correct: [0, 1] },
+            { id: 24, type: 2, q: "ما هي شروط قبول الدعوى؟ (اختر إجابتين)", options: ["الأهلية", "المصلحة", "أن يكون الحق مشروعاً", "أن يكون المدعي حاضراً"], correct: [0, 1] },
+            { id: 25, type: 2, q: "ما هي الطعون غير العادية؟ (اختر إجابتين)", options: ["الاستئناف", "النقض", "المعارضة", "طلب المراجعة"], correct: [1, 3] },
+            { id: 26, type: 3, q: "ما هي شروط التنفيذ الجبري؟ (اختر 3 إجابات)", options: ["أن يكون الحق مؤكد الوجود", "أن يكون الحق حال الأداء", "أن يكون الحق معين المقدار", "أن يكون الحق مستقبلياً", "أن يكون الحق معلقاً على شرط"], correct: [0, 1, 2] },
+            { id: 27, type: 3, q: "ما هي مميزات النيابة العامة؟ (اختر 3 إجابات)", options: ["الوحدة", "الاستقلال عن قضاة الحكم", "عدم إمكانية رد قضاتها", "التبعية للسلطة التشريعية", "المسؤولية الشخصية"], correct: [0, 1, 2] },
+            { id: 28, type: 1, q: "ما هي المادة التي تنص على أن كل طلب أصلي يجب أن يشتمل على تعيين الأطراف وبيان الموضوع؟", options: ["المادة 51", "المادة 11", "قواعد المسطرة المدنية", "المادة 36"], correct: [2] },
+            { id: 29, type: 1, q: "ما هو الطعن الذي يهدف إلى حماية حقوق الغير الذي لم يكن طرفاً في الخصومة؟", options: ["الاستئناف", "النقض", "اعتراض الغير", "المعارضة"], correct: [2] },
+            { id: 30, type: 1, q: "ما هي المدة التي يجب أن يودع فيها دفتر الشروط في الحجز العقاري؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [3] },
+            { id: 31, type: 1, q: "ما هو الاسم الذي يطلق على القاضي المكلف بالتحقيق في الجرائم؟", options: ["قاضي الحكم", "قاضي التحقيق", "وكيل الجمهورية", "رئيس المحكمة"], correct: [1] },
+            { id: 32, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تقدم طلباتها كتابة وبشكل شفهي؟", options: ["المادة 36", "المادة 51", "قواعد المسطرة الجنائية", "المادة 11"], correct: [2] },
+            { id: 33, type: 1, q: "ما هي المدة التي يجب أن يبلغ فيها أمر الحجز للمحجوز لديه؟", options: ["فوراً", "خلال 48 ساعة", "خلال 8 أيام", "خلال 15 يوماً"], correct: [0] },
+            { id: 34, type: 1, q: "ما هو الطعن الذي يهدف إلى إثبات عدم مطابقة الحكم للقواعد القانونية؟", options: ["الاستئناف", "النقض", "المعارضة", "المراجعة"], correct: [1] },
+            { id: 35, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تخضع للسلطة الرئاسية؟", options: ["المادة 36", "المادة 51", "مبدأ عام في التنظيم القضائي", "المادة 11"], correct: [2] },
+            { id: 36, type: 1, q: "ما هي المدة التي يجب أن يقدم فيها الطعن بالاستئناف في المواد الجنائية؟", options: ["8 أيام", "15 يوماً", "30 يوماً", "شهران"], correct: [1] },
+            { id: 37, type: 1, q: "ما هو الاسم الذي يطلق على المحكمة المختصة بالنظر في جرائم الاسترقاق والهجرة غير الشرعية؟", options: ["المحكمة الجنائية", "المحكمة الجنائية الخاصة", "المحكمة الجنائية المتخصصة", "المحكمة التجارية"], correct: [2] },
+            { id: 38, type: 1, q: "ما هي المادة التي تنص على أن التحقيق الابتدائي يكون سرياً؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [3] },
+            { id: 39, type: 1, q: "ما هو الطعن الذي يهدف إلى حماية حقوق الدائن؟", options: ["الحجز التحفظي", "الحجز التنفيذي", "الصلح", "التحكيم"], correct: [0] },
+            { id: 40, type: 1, q: "ما هي المدة التي يجب أن ينتظرها الدائن قبل بيع المحجوزات في الحجز التنفيذي؟", options: ["8 أيام", "15 يوماً", "20 يوماً", "30 يوماً"], correct: [0] },
+            { id: 41, type: 1, q: "ما هي المادة التي تنص على أن النيابة العامة تمثل لدى كل محكمة جزائية؟", options: ["المادة 36", "المادة 51", "المادة 11", "المادة 52"], correct: [0] },
+            { id: 42, type: 1, q: "ما هو الطعن الذي يهدف إلى إعادة النظر في حكم صدر بناءً على شهادات كاذبة؟", options: ["الاستئناف", "النقض", "طلب المراجعة", "المعارضة"], correct: [2] },
+        ];
+
+        // ==================== دوال التبديل ====================
+        function switchTab(tabId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            document.querySelectorAll('.nav-tabs button').forEach(b => b.classList.remove('active'));
+            if (tabId === 'summary') document.getElementById('btnSummary').classList.add('active');
+            else if (tabId === 'quiz1') document.getElementById('btnQuiz1').classList.add('active');
+            else if (tabId === 'quiz2') document.getElementById('btnQuiz2').classList.add('active');
+            else if (tabId === 'quiz3') document.getElementById('btnQuiz3').classList.add('active');
+            else if (tabId === 'quiz4') document.getElementById('btnQuiz3').classList.add('active');
+
+            if (tabId === 'quiz1') resetQuiz1();
+            if (tabId === 'quiz2') resetQuiz2();
+            if (tabId === 'quiz3') resetQuiz3();
+        }
+
+        // ==================== دوال الاختبار الأول ====================
+        let quiz1Rendered = false;
+
+        function renderQuiz1() {
+            if (quiz1Rendered) return;
+            const container = document.getElementById('quiz1-container');
+            let html = '';
+            
+            quiz1Data.forEach((q, index) => {
+                const inputType = q.correct.length === 1 ? 'radio' : 'checkbox';
+                html += `<div class="question-block" id="q1-${q.id}">
+                    <h3><span>${q.q}</span><span class="question-number">سؤال ${index + 1}</span></h3>
+                    <div class="options-container">`;
+                
+                q.options.forEach((opt, optIndex) => {
+                    html += `<label class="option-label" id="q1-${q.id}-opt-${optIndex}">
+                        <input type="${inputType}" name="q1-${q.id}" value="${optIndex}">${opt}
+                    </label>`;
+                });
+                html += `</div></div>`;
+            });
+            container.innerHTML = html;
+            quiz1Rendered = true;
+
+            container.querySelectorAll('input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const parentLabel = this.closest('.option-label');
+                    if (this.type === 'radio') {
+                        document.querySelectorAll(`input[name="${this.name}"]`).forEach(r => r.closest('.option-label').classList.remove('selected'));
+                    }
+                    if (this.checked) parentLabel.classList.add('selected');
+                    else parentLabel.classList.remove('selected');
+                });
+            });
+        }
+
+        function resetQuiz1() {
+            renderQuiz1();
+            document.getElementById('score1').textContent = '0';
+            document.getElementById('result1').classList.remove('show');
+            document.getElementById('result1').innerHTML = '';
+            document.getElementById('submit1').disabled = false;
+            document.querySelectorAll('#quiz1-container .question-block').forEach(b => b.classList.remove('correct', 'incorrect'));
+            document.querySelectorAll('#quiz1-container input').forEach(i => { i.checked = false; i.disabled = false; });
+            document.querySelectorAll('#quiz1-container .option-label').forEach(l => l.classList.remove('selected', 'correct-answer', 'wrong-answer'));
+        }
+
+        function calculateScore(data, prefix) {
+            let totalScore = 0, maxScore = 0, correctCount = 0, wrongCount = 0, unansweredCount = 0;
+
+            data.forEach(q => {
+                const selected = [];
+                q.options.forEach((_, optIndex) => {
+                    const input = document.querySelector(`input[name="${prefix}-${q.id}"][value="${optIndex}"]`);
+                    if (input && input.checked) selected.push(optIndex);
+                });
+
+                const block = document.getElementById(`${prefix}-${q.id}`);
+                let isFullyCorrect = true, hasWrong = false;
+
+                if (q.correct.length === 1) {
+                    maxScore += 3;
+                    if (selected.length === 0) { unansweredCount++; isFullyCorrect = false; }
+                    else if (selected.length === 1 && selected[0] === q.correct[0]) { totalScore += 3; correctCount++; }
+                    else { totalScore -= 0.25; wrongCount++; isFullyCorrect = false; hasWrong = true; }
+                } else if (q.correct.length === 2) {
+                    maxScore += 0.5;
+                    let correctSelected = 0, wrongSelected = 0;
+                    selected.forEach(s => { if (q.correct.includes(s)) correctSelected++; else wrongSelected++; });
+                    if (selected.length === 0) { unansweredCount++; isFullyCorrect = false; }
+                    else {
+                        totalScore += correctSelected * 0.25;
+                        if (wrongSelected > 0) { totalScore -= wrongSelected * 0.25; hasWrong = true; isFullyCorrect = false; }
+                        if (correctSelected === q.correct.length && wrongSelected === 0) correctCount++;
+                        else wrongCount++;
+                    }
+                } else if (q.correct.length === 3) {
+                    maxScore += 0.375;
+                    let correctSelected = 0, wrongSelected = 0;
+                    selected.forEach(s => { if (q.correct.includes(s)) correctSelected++; else wrongSelected++; });
+                    if (selected.length === 0) { unansweredCount++; isFullyCorrect = false; }
+                    else {
+                        totalScore += correctSelected * 0.125;
+                        if (wrongSelected > 0) { totalScore -= wrongSelected * 0.25; hasWrong = true; isFullyCorrect = false; }
+                        if (correctSelected === q.correct.length && wrongSelected === 0) correctCount++;
+                        else wrongCount++;
+                    }
+                }
+
+                if (isFullyCorrect && selected.length > 0) { block.classList.add('correct'); block.classList.remove('incorrect'); }
+                else if (hasWrong || (selected.length > 0 && !isFullyCorrect)) { block.classList.add('incorrect'); block.classList.remove('correct'); }
+                else { block.classList.remove('correct', 'incorrect'); }
+
+                q.options.forEach((_, optIndex) => {
+                    const label = document.getElementById(`${prefix}-${q.id}-opt-${optIndex}`);
+                    const input = label.querySelector('input');
+                    input.disabled = true;
+                    if (q.correct.includes(optIndex)) label.classList.add('correct-answer');
+                    if (selected.includes(optIndex) && !q.correct.includes(optIndex)) label.classList.add('wrong-answer');
+                });
+            });
+
+            if (totalScore < 0) totalScore = 0;
+            totalScore = Math.round(totalScore * 100) / 100;
+            const finalScore = maxScore > 0 ? (totalScore / maxScore) * 15 : 0;
+            return { rawScore: totalScore, maxScore, finalScore: Math.round(finalScore * 100) / 100, correctCount, wrongCount, unansweredCount };
+        }
+
+        function submitQuiz1() {
+            const result = calculateScore(quiz1Data, 'q1');
+            document.getElementById('score1').textContent = result.finalScore;
+            document.getElementById('submit1').disabled = true;
+            document.getElementById('result1').innerHTML = `
+                <h2>النتيجة النهائية</h2>
+                <div class="final-score">${result.finalScore} / 15</div>
+                <div class="score-detail">
+                    <p>مجموع النقاط الخام: ${result.rawScore} من ${result.maxScore}</p>
+                    <p>الإجابات الصحيحة: ${result.correctCount} | الإجابات الخاطئة: ${result.wrongCount} | بدون إجابة: ${result.unansweredCount}</p>
+                    <p style="margin-top:10px; font-weight:bold; color: var(--green-dark);">تم احتساب النتيجة على 15</p>
+                </div>`;
+            document.getElementById('result1').classList.add('show');
+        }
+
+        // ==================== دوال الاختبار الثاني ====================
+        let quiz2Rendered = false;
+
+        function renderQuiz2() {
+            if (quiz2Rendered) return;
+            const container = document.getElementById('quiz2-container');
+            let html = '';
+            quiz2Data.forEach((q, index) => {
+                const inputType = q.correct.length === 1 ? 'radio' : 'checkbox';
+                html += `<div class="question-block" id="q2-${q.id}">
+                    <h3><span>${q.q}</span><span class="question-number">سؤال ${index + 1}</span></h3>
+                    <div class="options-container">`;
+                q.options.forEach((opt, optIndex) => {
+                    html += `<label class="option-label" id="q2-${q.id}-opt-${optIndex}">
+                        <input type="${inputType}" name="q2-${q.id}" value="${optIndex}">${opt}
+                    </label>`;
+                });
+                html += `</div></div>`;
+            });
+            container.innerHTML = html;
+            quiz2Rendered = true;
+
+            container.querySelectorAll('input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const parentLabel = this.closest('.option-label');
+                    if (this.type === 'radio') {
+                        document.querySelectorAll(`input[name="${this.name}"]`).forEach(r => r.closest('.option-label').classList.remove('selected'));
+                    }
+                    if (this.checked) parentLabel.classList.add('selected');
+                    else parentLabel.classList.remove('selected');
+                });
+            });
+        }
+
+        function resetQuiz2() {
+            renderQuiz2();
+            document.getElementById('score2').textContent = '0';
+            document.getElementById('result2').classList.remove('show');
+            document.getElementById('result2').innerHTML = '';
+            document.getElementById('submit2').disabled = false;
+            document.querySelectorAll('#quiz2-container .question-block').forEach(b => b.classList.remove('correct', 'incorrect'));
+            document.querySelectorAll('#quiz2-container input').forEach(i => { i.checked = false; i.disabled = false; });
+            document.querySelectorAll('#quiz2-container .option-label').forEach(l => l.classList.remove('selected', 'correct-answer', 'wrong-answer'));
+        }
+
+        function submitQuiz2() {
+            const result = calculateScore(quiz2Data, 'q2');
+            document.getElementById('score2').textContent = result.finalScore;
+            document.getElementById('submit2').disabled = true;
+            document.getElementById('result2').innerHTML = `
+                <h2>النتيجة النهائية</h2>
+                <div class="final-score">${result.finalScore} / 15</div>
+                <div class="score-detail">
+                    <p>مجموع النقاط الخام: ${result.rawScore} من ${result.maxScore}</p>
+                    <p>الإجابات الصحيحة: ${result.correctCount} | الإجابات الخاطئة: ${result.wrongCount} | بدون إجابة: ${result.unansweredCount}</p>
+                    <p style="margin-top:10px; font-weight:bold; color: var(--green-dark);">تم احتساب النتيجة على 15</p>
+                </div>`;
+            document.getElementById('result2').classList.add('show');
+        }
+
+        // ==================== دوال الاختبار الثالث ====================
+        let quiz3Rendered = false;
+
+        function renderQuiz3() {
+            if (quiz3Rendered) return;
+            const container = document.getElementById('quiz3-container');
+            let html = '';
+            quiz3Data.forEach((q, index) => {
+                const inputType = q.correct.length === 1 ? 'radio' : 'checkbox';
+                html += `<div class="question-block" id="q3-${q.id}">
+                    <h3><span>${q.q}</span><span class="question-number">سؤال ${index + 1}</span></h3>
+                    <div class="options-container">`;
+                q.options.forEach((opt, optIndex) => {
+                    html += `<label class="option-label" id="q3-${q.id}-opt-${optIndex}">
+                        <input type="${inputType}" name="q3-${q.id}" value="${optIndex}">${opt}
+                    </label>`;
+                });
+                html += `</div></div>`;
+            });
+            container.innerHTML = html;
+            quiz3Rendered = true;
+
+            container.querySelectorAll('input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const parentLabel = this.closest('.option-label');
+                    if (this.type === 'radio') {
+                        document.querySelectorAll(`input[name="${this.name}"]`).forEach(r => r.closest('.option-label').classList.remove('selected'));
+                    }
+                    if (this.checked) parentLabel.classList.add('selected');
+                    else parentLabel.classList.remove('selected');
+                });
+            });
+        }
+
+        function resetQuiz3() {
+            renderQuiz3();
+            document.getElementById('score3').textContent = '0';
+            document.getElementById('result3').classList.remove('show');
+            document.getElementById('result3').innerHTML = '';
+            document.getElementById('submit3').disabled = false;
+            document.querySelectorAll('#quiz3-container .question-block').forEach(b => b.classList.remove('correct', 'incorrect'));
+            document.querySelectorAll('#quiz3-container input').forEach(i => { i.checked = false; i.disabled = false; });
+            document.querySelectorAll('#quiz3-container .option-label').forEach(l => l.classList.remove('selected', 'correct-answer', 'wrong-answer'));
+        }
+
+        function submitQuiz3() {
+            const result = calculateScore(quiz3Data, 'q3');
+            document.getElementById('score3').textContent = result.finalScore;
+            document.getElementById('submit3').disabled = true;
+            document.getElementById('result3').innerHTML = `
+                <h2>النتيجة النهائية</h2>
+                <div class="final-score">${result.finalScore} / 15</div>
+                <div class="score-detail">
+                    <p>مجموع النقاط الخام: ${result.rawScore} من ${result.maxScore}</p>
+                    <p>الإجابات الصحيحة: ${result.correctCount} | الإجابات الخاطئة: ${result.wrongCount} | بدون إجابة: ${result.unansweredCount}</p>
+                    <p style="margin-top:10px; font-weight:bold; color: var(--green-dark);">تم احتساب النتيجة على 15</p>
+                </div>`;
+            document.getElementById('result3').classList.add('show');
+        }
+
+        // ==================== التهيئة ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQuiz1();
+            renderQuiz2();
+            renderQuiz3();
+        });
+
+        window.switchTab = switchTab;
+        window.submitQuiz1 = submitQuiz1;
+        window.submitQuiz2 = submitQuiz2;
+        window.submitQuiz3 = submitQuiz3;
+    </script>
 </body>
 </html>
